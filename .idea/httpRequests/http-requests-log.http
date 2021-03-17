@@ -1,0 +1,12 @@
+GET http://localhost:8080/api/products/filter
+
+<> 2021-03-15T103429.200.json
+
+###
+
+GET http://localhost:8080/api/products
+
+<> 2021-03-15T103421.200.json
+
+###
+
