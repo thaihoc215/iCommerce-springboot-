@@ -1,7 +1,12 @@
 package com.example.restservice.entity;
 
-import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "color")
@@ -14,8 +19,8 @@ public class Color {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy="color", fetch = FetchType.LAZY)
-    private List<Product> products;
+    /*@OneToMany(mappedBy="color", fetch = FetchType.LAZY)
+    private List<oldimplement.entity.Product> products;*/
 
     public int getId() {
         return id;
@@ -33,12 +38,12 @@ public class Color {
         this.name = name;
     }
 
-    public List<Product> getProducts() {
+    /*public List<oldimplement.entity.Product> getProducts() {
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
+    }*/
 
 }

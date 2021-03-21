@@ -1,16 +1,11 @@
 package com.example.restservice.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -40,9 +35,9 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    /*@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "customer_id")
-    private List<CustomerActivity> customerActivities = new ArrayList<>();
+    private List<CustomerActivity> customerActivities = new ArrayList<>();*/
 
     public long getId() {
         return id;
@@ -100,11 +95,11 @@ public class Customer {
         this.address = address;
     }
 
-    public List<CustomerActivity> getCustomerActivities() {
+    /*public List<CustomerActivity> getCustomerActivities() {
         return customerActivities;
     }
 
     public void setCustomerActivities(List<CustomerActivity> customerActivities) {
         this.customerActivities = customerActivities;
-    }
+    }*/
 }

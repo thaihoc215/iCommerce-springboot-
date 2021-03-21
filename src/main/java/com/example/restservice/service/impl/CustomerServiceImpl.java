@@ -1,22 +1,12 @@
 package com.example.restservice.service.impl;
 
-import com.example.restservice.dao.CustomerActivityRepository;
-import com.example.restservice.dao.CustomerRepository;
-import com.example.restservice.dto.CustomerActivityDto;
 import com.example.restservice.entity.Customer;
-import com.example.restservice.entity.CustomerActivity;
 import com.example.restservice.service.CustomerService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.Timestamp;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -25,7 +15,7 @@ public class CustomerServiceImpl implements CustomerService {
     private static Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
 
     // quick and dirty: inject user dao (use constructor injection)
-    private CustomerRepository customerDao;
+    /*private CustomerRepository customerDao;
 
     private final CustomerActivityRepository customerActivityDao;
 
@@ -73,7 +63,24 @@ public class CustomerServiceImpl implements CustomerService {
             logger.error("Getting error when record user activity", e.getMessage());
         }
 
-    }
+    }*/
 
+
+    @Override
+    public Customer getCurrentlyLoggedInCustomer(Authentication authentication) {
+        if (authentication == null) {
+            return null;
+        }
+
+        /*Customer customer = null;
+        Object principal = authentication.getPrincipal();
+        if(principal instanceof  CustomerUserDetails) {
+
+        } else if (principal instanceof CustomOAuth2User) {
+            String email = ....
+            customer = customer....
+        }*/
+        return new Customer();
+    }
 
 }

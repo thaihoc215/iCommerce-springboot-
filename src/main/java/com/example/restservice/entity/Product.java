@@ -1,10 +1,17 @@
 package com.example.restservice.entity;
 
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -40,9 +47,9 @@ public class Product {
     @Column(name = "modified_by")
     private String modifiedBy;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    /*@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "product_id")
-    private List<PriceTracking> priceTrackings = new ArrayList<>();
+    private List<PriceTracking> priceTrackings = new ArrayList<>();*/
 
     public long getId() {
         return id;
@@ -116,11 +123,11 @@ public class Product {
         this.modifiedBy = modifiedBy;
     }
 
-    public List<PriceTracking> getPriceTrackings() {
+    /*public List<PriceTracking> getPriceTrackings() {
         return priceTrackings;
     }
 
     public void setPriceTrackings(List<PriceTracking> priceTrackings) {
         this.priceTrackings = priceTrackings;
-    }
+    }*/
 }

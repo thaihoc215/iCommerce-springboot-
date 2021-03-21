@@ -4,7 +4,102 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b2b064b-d7c8-4203-b723-2c1468441d34" name="Default" comment="" />
+    <list default="true" id="6b2b064b-d7c8-4203-b723-2c1468441d34" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/dbdiagram1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/serviceflow1-CartService.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/controller/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/CartItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/ShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/ShoppingCartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/h2tmpdata.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/restservice/ShoppingCartTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/notuset/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/notuset/CustomerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/Greeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/notuset/Greeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/notuset/GreetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/PersonJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/notuset/PersonJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/notuset/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/CustomerActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/CustomerActivityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/PriceTrackingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/PriceTrackingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/ProductRepoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/ProductRepoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dao/impl/ProductRepoDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/impl/ProductRepoDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dto/CustomerActivityDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dto/CustomerActivityDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/dto/request/UpdatePriceRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dto/request/UpdatePriceRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/CustomerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/CustomerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/PriceTracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/PriceTracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restservice/util/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/util/ProductConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/CustomerDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/Greeting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/GreetingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/PersonJpaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/ProductDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/controller/EmployeeRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/controller/PersonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/CustomerActivityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/EmployeeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/PersonRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/PriceTrackingRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/ProductRepoDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/impl/ProductDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/impl/ProductRepoDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dto/CustomerActivityDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dto/ProductDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dto/request/UpdatePriceRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Brand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/CustomerActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/PriceTracking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/EmployeeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/PersonService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/impl/CustomerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/impl/EmployeeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/impl/PersonServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/service/impl/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/util/ProductConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +121,17 @@
       <find>cart</find>
       <find>modified_time</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
@@ -324,17 +430,26 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/example/restservice/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/restservice/service" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/restservice/service" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/restservice/entity" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.restservice.entity" />
       <recent name="com.example.restservice.dao" />
     </key>
   </component>
@@ -358,9 +473,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestServiceApplication">
+  <component name="RunManager" selected="JUnit.ShoppingCartTests">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -370,6 +496,56 @@
     </configuration>
     <configuration name="generated-requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="ShoppingCartTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.restservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.restservice" />
+      <option name="MAIN_CLASS_NAME" value="com.example.restservice.ShoppingCartTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShoppingCartTests.testAddOneCartItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.restservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.restservice" />
+      <option name="MAIN_CLASS_NAME" value="com.example.restservice.ShoppingCartTests" />
+      <option name="METHOD_NAME" value="testAddOneCartItem" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShoppingCartTests.testGetCartItemsByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.restservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.restservice" />
+      <option name="MAIN_CLASS_NAME" value="com.example.restservice.ShoppingCartTests" />
+      <option name="METHOD_NAME" value="testGetCartItemsByCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -396,6 +572,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ShoppingCartTests" />
+        <item itemvalue="JUnit.ShoppingCartTests.testAddOneCartItem" />
+        <item itemvalue="JUnit.ShoppingCartTests.testGetCartItemsByCustomer" />
         <item itemvalue="HTTP Request.generated-requests#1" />
         <item itemvalue="HTTP Request.generated-requests#2" />
       </list>
@@ -420,6 +599,7 @@
       <workItem from="1615613087965" duration="14167000" />
       <workItem from="1615818811137" duration="1656000" />
       <workItem from="1615907441638" duration="272000" />
+      <workItem from="1616305591160" duration="8477000" />
     </task>
     <servers />
   </component>
@@ -481,32 +661,49 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/restservice/dao/impl/ProductRepoDaoImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/oldimplement/dao/impl/ProductRepoDaoImpl.java</url>
           <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/ProductServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/oldimplement/service/impl/ProductServiceImpl.java</url>
           <line>96</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/ProductServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/oldimplement/service/impl/ProductServiceImpl.java</url>
           <line>95</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/restservice/service/impl/ProductServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/oldimplement/service/impl/ProductServiceImpl.java</url>
           <line>93</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/restservice/ShoppingCartTests.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/restservice/ShoppingCartTests.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="cartRepo.findByCustomer(customer)" language="JAVA" />
+      </configuration>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="query.getResultList()" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">

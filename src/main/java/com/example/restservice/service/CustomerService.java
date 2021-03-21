@@ -1,13 +1,10 @@
 package com.example.restservice.service;
 
-import com.example.restservice.dto.CustomerActivityDto;
 import com.example.restservice.entity.Customer;
-import com.example.restservice.entity.CustomerActivity;
-
-import java.util.List;
+import org.springframework.security.core.Authentication;
 
 public interface CustomerService {
-    List<Customer> findAll();
+    /*List<Customer> findAll();
 
     Customer findById(long id);
 
@@ -15,5 +12,7 @@ public interface CustomerService {
 
     void deleteById(long id);
 
-    void logCustomerActivity(CustomerActivityDto customerActivity);
+    void logCustomerActivity(CustomerActivityDto customerActivity);*/
+
+    Customer getCurrentlyLoggedInCustomer(Authentication authentication);
 }

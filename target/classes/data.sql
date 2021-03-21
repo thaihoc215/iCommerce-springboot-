@@ -41,3 +41,8 @@ INSERT INTO customer (ID, password_hash, role_id, full_name, phone_number, email
 VALUES(2,  '111', 2, 'Luong Van A', '07733445566', 'lvA@gmail.com', 'Thich Quang Duc 2');
 INSERT INTO customer (ID, password_hash, role_id, full_name, phone_number, email, address )
 VALUES(3,  '111', 2, 'Nguyen Van B','0779999999', 'nvB@gmail.com', 'Thich Quang Duc3');
+
+INSERT INTO cart_items (id, product_id, customer_id, quantity)
+VALUES(1,  1, 1, 1);
+INSERT INTO cart_items (id, product_id, customer_id, quantity)
+VALUES(2,  2, 1, 1); --customer 1 have 1 one product 2
