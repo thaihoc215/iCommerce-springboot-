@@ -1,0 +1,7 @@
+step by step:
+1.Cretate CartItem table and entity
+2.Create CartItem Repo (JPA interface)
+ -findByCustomer
+3.ShoppingCart service
+ -add/remove/updateQuantity product to cart via customer
+4.Shopping CartController/RestController
