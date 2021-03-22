@@ -2,7 +2,6 @@ package oldimplement.controller;
 
 import oldimplement.dto.ProductDto;
 import oldimplement.dto.request.UpdatePriceRequest;
-import oldimplement.entity.Product;
 import oldimplement.service.ProductService;
 import oldimplement.util.ProductConverter;
 import org.springframework.beans.factory.annotation.Autowired;

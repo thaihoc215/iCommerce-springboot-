@@ -2,7 +2,6 @@ package oldimplement.dao.impl;
 
 import oldimplement.dao.ProductRepoDao;
 import oldimplement.dto.request.UpdatePriceRequest;
-import oldimplement.entity.Product;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.EntityManager;
@@ -23,7 +22,7 @@ public class ProductRepoDaoImpl implements ProductRepoDao {
     @PersistenceContext
     private EntityManager em;
 
-    @Override
+    /*@Override
     public List<Product> filterProducts(String brand, String color) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Product> cq = cb.createQuery(Product.class);
@@ -82,6 +81,6 @@ public class ProductRepoDaoImpl implements ProductRepoDao {
         cq.where(cb.equal(productRoot.get("id"), updatePriceRequest.getProductId()));
 
         return em.createQuery(cq).executeUpdate();
-    }
+    }*/
 
 }
