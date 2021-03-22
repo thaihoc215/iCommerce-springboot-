@@ -1,14 +1,13 @@
 package oldimplement.util;
 
 import oldimplement.dto.ProductDto;
-import oldimplement.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductConverter {
 
-    public static ProductDto toProductDto(Product product) {
+    /*public static ProductDto toProductDto(Product product) {
 
         if (product == null) {
             return null;
@@ -32,5 +31,5 @@ public class ProductConverter {
         List<ProductDto> productDtos = new ArrayList<>();
         productList.forEach(product -> productDtos.add(toProductDto(product)));
         return productDtos;
-    }
+    }*/
 }

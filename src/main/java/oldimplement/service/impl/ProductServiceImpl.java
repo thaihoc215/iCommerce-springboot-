@@ -5,7 +5,6 @@ import oldimplement.dao.ProductRepository;
 import oldimplement.dto.CustomerActivityDto;
 import oldimplement.dto.request.UpdatePriceRequest;
 import oldimplement.entity.PriceTracking;
-import oldimplement.entity.Product;
 import oldimplement.service.CustomerService;
 import oldimplement.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

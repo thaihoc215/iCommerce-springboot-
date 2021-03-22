@@ -1,7 +1,6 @@
 package oldimplement.service;
 
 import oldimplement.dto.CustomerActivityDto;
-import oldimplement.entity.Customer;
 
 import java.util.List;
 

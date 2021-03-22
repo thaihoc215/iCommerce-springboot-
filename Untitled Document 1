@@ -5,3 +5,10 @@ step by step:
 3.ShoppingCart service
  -add/remove/updateQuantity product to cart via customer
 4.Shopping CartController/RestController
+
+
+
+Step:
+1.Create root project as maven(gradle project)
+2.Create ShopmeCommon project with spring init (JPA) and set module to root project (library project)
+3.Create shopme-web-parent project - common dependencies between BE and FE

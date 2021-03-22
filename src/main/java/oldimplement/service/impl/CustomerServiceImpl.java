@@ -3,7 +3,6 @@ package oldimplement.service.impl;
 import oldimplement.dao.CustomerActivityRepository;
 import oldimplement.dao.CustomerRepository;
 import oldimplement.dto.CustomerActivityDto;
-import oldimplement.entity.Customer;
 import oldimplement.entity.CustomerActivity;
 import oldimplement.service.CustomerService;
 

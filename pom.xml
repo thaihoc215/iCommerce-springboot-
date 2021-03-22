@@ -73,6 +73,11 @@
 
     </dependencies>
 
+    <modules>
+        <module>shopme-common</module>
+        <module>shopme-web-parent</module>
+    </modules>
+
     <build>
         <plugins>
             <plugin>
