@@ -13,4 +13,6 @@ Step:
 2.Create ShopmeCommon project with spring init (JPA) and set module to root project (library project)
 3.Create shopme-web-parent project - common dependencies between BE and FE (spring-web)
     3.1 Create shopme backend
+    - set parent project by group/atifart/version of web-parent
     3.2 Create shopme frontend
+    - set relative path if have error
