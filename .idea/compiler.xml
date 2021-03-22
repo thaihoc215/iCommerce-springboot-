@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="shopme-common" />
-        <module name="rest-service" />
         <module name="shopme-web-parent" />
       </profile>
     </annotationProcessing>

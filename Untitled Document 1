@@ -11,4 +11,6 @@ step by step:
 Step:
 1.Create root project as maven(gradle project)
 2.Create ShopmeCommon project with spring init (JPA) and set module to root project (library project)
-3.Create shopme-web-parent project - common dependencies between BE and FE
+3.Create shopme-web-parent project - common dependencies between BE and FE (spring-web)
+    3.1 Create shopme backend
+    3.2 Create shopme frontend

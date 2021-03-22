@@ -5,76 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b2b064b-d7c8-4203-b723-2c1468441d34" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP (copy).md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Untitled Document 1" beforeDir="false" afterPath="$PROJECT_DIR$/Untitled Document 1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/dao/ProductRepoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/ProductRepoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/dao/impl/ProductRepoDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/dao/impl/ProductRepoDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oldimplement/util/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oldimplement/util/ProductConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/RestServiceApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/dao/CartItemRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Brand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/CartItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restservice/entity/Product.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/h2tmpdata.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/notuset/CustomerDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/notuset/CustomerDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/notuset/Greeting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/notuset/GreetingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/notuset/PersonJpaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/notuset/ProductDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/controller/CustomerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/controller/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dao/CustomerActivityRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dao/CustomerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dao/PriceTrackingRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dao/ProductRepoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dao/ProductRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dao/impl/ProductRepoDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dto/CustomerActivityDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dto/ProductDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/dto/request/UpdatePriceRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/Brand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/CustomerActivity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/PriceTracking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/entity/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/service/CustomerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/service/ProductService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/service/impl/CustomerServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/service/impl/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/oldimplement/util/ProductConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rest-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rest-service-0.0.1-SNAPSHOT.jar.original.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.restservice.RestServiceApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.example.restservice.RestServiceApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/restservice/RestServiceApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/restservice/ShoppingCartTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -411,9 +350,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/example/restservice/service" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -591,7 +537,7 @@
       <workItem from="1615818811137" duration="1656000" />
       <workItem from="1615907441638" duration="272000" />
       <workItem from="1616305591160" duration="8477000" />
-      <workItem from="1616424509602" duration="1395000" />
+      <workItem from="1616424509602" duration="2641000" />
     </task>
     <servers />
   </component>
@@ -648,6 +594,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
