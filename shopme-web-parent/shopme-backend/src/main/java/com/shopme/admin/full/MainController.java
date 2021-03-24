@@ -1,4 +1,4 @@
-package com.shopme.site.admin;
+package com.shopme.admin.full;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

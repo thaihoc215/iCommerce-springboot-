@@ -16,3 +16,6 @@ Step:
     - set parent project by group/atifart/version of web-parent
     3.2 Create shopme frontend
     - set relative path if have error
+4. Create Admin Home Page (GUI) (do it later)
+5. Role entity, role repo and unit test
+    5.1. Add shopcommon as dependency to web-parent
