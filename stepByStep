@@ -19,3 +19,4 @@ Step:
 4. Create Admin Home Page (GUI) (do it later)
 5. Role entity, role repo and unit test
     5.1. Add shopcommon as dependency to web-parent
+6. User entity, User repo and unit test
