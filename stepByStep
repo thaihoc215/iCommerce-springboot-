@@ -20,3 +20,5 @@ Step:
 5. Role entity, role repo and unit test
     5.1. Add shopcommon as dependency to web-parent
 6. User entity, User repo and unit test
+    6.3 create user with 2 roles
+    6.4 overridde hashCode and equals of Roles to avoid add the same role to Set
