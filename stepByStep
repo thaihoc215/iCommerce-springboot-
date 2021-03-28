@@ -6,7 +6,11 @@ step by step:
  -add/remove/updateQuantity product to cart via customer
 4.Shopping CartController/RestController
 
-
+curl with verbose mode on:
+GET curl -v http://www.example.com/
+POST with request body (in linux replace '^' by '\'
+curl -d "{\"email\":\"testcurl@yahoo.com\",\"password\":\"4444\",\"firstName\":\"abc\",\"lastName\":\"xyz\"}" -H "Content-Type: application/json" ^
+    http://localhost:8080/shopmeadmin/rest/users/save
 
 Step:
 1.Create root project as maven(gradle project)
@@ -22,3 +26,10 @@ Step:
 6. User entity, User repo and unit test
     6.3 create user with 2 roles
     6.4 overridde hashCode and equals of Roles to avoid add the same role to Set
+7. Create User Listing function (lecture 27)
+    7.1 Create controller/service
+    curl -v http://localhost:8080/shopmeadmin/rest/users
+    7.2 Create GUI (not done)
+8. Create New User Function (lecture 28)
+    8.1 Update user controler/service
+    8.2 create GUI to add new user (show info, role, submit form + binding data)
