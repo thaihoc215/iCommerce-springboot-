@@ -29,11 +29,17 @@ Step:
 7. Create User Listing function (lecture 27)
     7.1 Create controller/service
     curl -v http://localhost:8080/shopmeadmin/rest/users
-    7.2 Create GUI (not done)
+    7.2 xxx Create GUI (not done)
 8. Create New User Function (lecture 28)
     8.1 Update user controler/service
-    8.2 create GUI to add new user (show info, role, submit form + binding data)
+    8.2xxx create GUI to add new user (show info, role, submit form + binding data) (not done)
 9. Endcode User password (Lec29)
     - Bcrypt pass endcoder by Spring securit
     - Config Spring security / endcoder test /
     - update create user function (use passendcoder bean and disable http csrf for postman test)
+10. Check Uniqueness of User Email (Lec 30)
+    - invoke checkDuplicate method in controller and service
+    - Code get User by email (rest/controler)
+    -xxx Code Ajax call (not done)
+11. Use fontawesome for icon (not done)
+12. Update user function

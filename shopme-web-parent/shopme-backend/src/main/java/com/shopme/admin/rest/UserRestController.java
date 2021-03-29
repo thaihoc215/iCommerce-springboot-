@@ -3,6 +3,7 @@ package com.shopme.admin.rest;
 import com.shopme.admin.user.UserService;
 import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +30,11 @@ public class UserRestController {
     public void saveUser(@RequestBody User user) {
         System.out.println(user);
         userService.save(user);
+    }
+
+    @PostMapping("/users/checkEmail")
+    public String checkDuplicateEmail(@Param("email") String email) {
+        return userService.isEmailUnique(email) ? "OK" : "Duplicated";
     }
 
 }

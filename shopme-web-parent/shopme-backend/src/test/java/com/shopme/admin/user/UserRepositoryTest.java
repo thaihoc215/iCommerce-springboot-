@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,6 +32,8 @@ public class UserRepositoryTest {
 
     @Autowired
     private TestEntityManager entityManager;
+
+    private static final String DEFAULT_EMAIL = "thaihoc2105@gmail.com";
 
     @Test
     public void testCreateFirstUserWithOneRole() {
@@ -135,5 +138,17 @@ public class UserRepositoryTest {
 
         userRepository.deleteById(userSaved.getId());
         assertFalse(userRepository.findById(userSaved.getId()).isPresent());
+    }
+
+    @Test
+    public void testGetUserByEmail() {
+        String email = DEFAULT_EMAIL;
+        User userByEmail = userRepository.getUserByEmail(email);
+        Assert.assertNotNull(userByEmail);
+        assertEquals(userByEmail.getId(), 1);
+
+        email = "notfound@gmail.com";
+        userByEmail = userRepository.getUserByEmail(email);
+        assertNull(userByEmail);
     }
 }
