@@ -43,3 +43,8 @@ Step:
     -xxx Code Ajax call (not done)
 11. Use fontawesome for icon (not done)
 12. Update user function
+ -xxx update user_form /edit user form (not done)
+ - find user before update
+ - update save() method (change user password if not blank)
+ - update isEmailUnique (in edit mode)
+ - update save with encode in edit mode
