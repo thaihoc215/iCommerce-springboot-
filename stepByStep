@@ -7,7 +7,7 @@ step by step:
 4.Shopping CartController/RestController
 
 curl with verbose mode on:
-GET curl -v http://www.example.com/
+GET curl -v http://localhost:8080/shopmeadmin/rest/users
 POST with request body (in linux replace '^' by '\'
 curl -d "{\"email\":\"testcurl@yahoo.com\",\"password\":\"4444\",\"firstName\":\"abc\",\"lastName\":\"xyz\"}" -H "Content-Type: application/json" ^
     http://localhost:8080/shopmeadmin/rest/users/save
@@ -33,3 +33,6 @@ Step:
 8. Create New User Function (lecture 28)
     8.1 Update user controler/service
     8.2 create GUI to add new user (show info, role, submit form + binding data)
+9. Endcode User password (Lec29)
+    - Bcrypt pass endcoder by Spring securit
+    - Config Spring security / endcoder test / update create user function
