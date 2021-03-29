@@ -35,4 +35,5 @@ Step:
     8.2 create GUI to add new user (show info, role, submit form + binding data)
 9. Endcode User password (Lec29)
     - Bcrypt pass endcoder by Spring securit
-    - Config Spring security / endcoder test / update create user function
+    - Config Spring security / endcoder test /
+    - update create user function (use passendcoder bean and disable http csrf for postman test)
