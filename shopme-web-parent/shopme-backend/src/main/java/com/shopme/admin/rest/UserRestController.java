@@ -6,6 +6,7 @@ import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,6 +61,11 @@ public class UserRestController {
     @GetMapping("/users/{id}")
     public User findUser(@PathVariable("id") Integer id) throws UserNotFoundException {
         return userService.getUserById(id);
+    }
+
+    @DeleteMapping("/users/delete/{id}")
+    public void deleteUser(@PathVariable("id") Integer id) throws UserNotFoundException {
+        userService.deleteUser(id);
     }
 
 }

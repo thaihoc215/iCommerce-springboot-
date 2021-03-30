@@ -70,6 +70,14 @@ public class UserService {
         } catch (NoSuchElementException e) {
             throw new UserNotFoundException("Could not find any user with id: " + id);
         }
+    }
 
+    public void deleteUser(Integer id) throws UserNotFoundException {
+        Long countById = userRepository.countById(id);
+        if (countById == null || countById == 0) {
+            throw new UserNotFoundException("Could not find any user with id: " + id);
+        }
+
+        userRepository.deleteById(id);
     }
 }

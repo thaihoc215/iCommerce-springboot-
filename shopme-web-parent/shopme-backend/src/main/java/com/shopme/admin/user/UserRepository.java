@@ -10,5 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query("Select u from User u Where u.email = :email") //we can remove then spring find by auto config
-    public User getUserByEmail(@Param("email") String email); // can user 'get'/'find'
+    User getUserByEmail(@Param("email") String email); // can user 'get'/'find'
+
+    Long countById(Integer id);
 }
