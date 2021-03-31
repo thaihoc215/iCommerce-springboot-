@@ -22,7 +22,7 @@ Step:
     - set parent project by group/atifart/version of web-parent
     3.2 Create shopme frontend
     - set relative path if have error
-4. Create Admin Home Page (GUI) (do it later)
+4. Create Admin Home Page (GUI)
 5. Role entity, role repo and unit test
     5.1. Add shopcommon as dependency to web-parent
 6. User entity, User repo and unit test
@@ -31,7 +31,7 @@ Step:
 7. Create User Listing function (lecture 27)
     7.1 Create controller/service
     curl -v http://localhost:8080/shopmeadmin/rest/users
-    7.2 xxx Create GUI (not done)
+    7.2 Create GUI
 8. Create New User Function (lecture 28)
     8.1 Update user controler/service
     8.2xxx create GUI to add new user (show info, role, submit form + binding data) (not done)
