@@ -5,6 +5,7 @@ import com.shopme.admin.user.UserService;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -79,6 +80,16 @@ public class UserController {
         } catch (UserNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
         }
+        return "redirect:/users";
+    }
+
+    @GetMapping("/users/{id}/enabled/{status}")
+    public String updateUserStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean status,
+                                 RedirectAttributes redirectAttributes) {
+        userService.updateUserEnabledStatus(id, status);
+        String statusMes = status ? "enabled" : "disabled";
+        String message = "The User id: " + id + " has been " + statusMes;
+        redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/users";
     }
 }

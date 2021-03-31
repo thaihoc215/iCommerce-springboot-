@@ -68,4 +68,9 @@ public class UserRestController {
         userService.deleteUser(id);
     }
 
+    @PutMapping("/users/{id}/update/status")
+    public void updateUserStatus(@PathVariable("id") Integer id, @Param("status") boolean status) {
+        userService.updateUserEnabledStatus(id, status);
+    }
+
 }

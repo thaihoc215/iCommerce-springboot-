@@ -160,4 +160,18 @@ public class UserRepositoryTest {
         count = userRepository.countById(100);
         assertEquals(count, 0);
     }
+
+    @Test
+    public void testDisableUser() {
+        userRepository.updateEnabledStatus(1, false);
+        User user1 = userRepository.findById(1).get();
+        assertFalse(user1.isEnabled());
+    }
+
+    @Test
+    public void testEnableUser() {
+        userRepository.updateEnabledStatus(2, true);
+        User user1 = userRepository.findById(2).get();
+        assertTrue(user1.isEnabled());
+    }
 }

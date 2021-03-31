@@ -8,6 +8,7 @@ step by step:
 
 curl with verbose mode on:
 GET curl -v http://localhost:8080/shopmeadmin/rest/users
+curl 'https://til.hashrocket.com/api/developer_posts.json?username=gabrielreis' | json_pp -> pretty json
 POST with request body (in linux replace '^' by '\'
 curl -d "{\"email\":\"testcurl@yahoo.com\",\"password\":\"4444\",\"firstName\":\"abc\",\"lastName\":\"xyz\"}" -H "Content-Type: application/json" ^
     http://localhost:8080/shopmeadmin/rest/users/save
@@ -53,3 +54,6 @@ Step:
     - count and delete
     - add button delete in list user (not done)
     - add confirm message on GUI (not done)
+14. Update user Enabled status (lec 34)
+    - update repo, service and controller(include rest)
+    -xxx update GUI for update status (not done)

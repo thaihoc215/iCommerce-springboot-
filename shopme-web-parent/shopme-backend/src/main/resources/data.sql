@@ -55,6 +55,8 @@ VALUES(5,  'Assistant', 'Manage everything');
 -- User table
 INSERT INTO users (id, email, enabled, first_name, last_name, password, photos)
 values (1, 'thaihoc2105@gmail.com', true, 'Hoc', 'Ha', '123', null);
+INSERT INTO users (id, email, enabled, first_name, last_name, password, photos)
+values (2, 'thaihocdisable@gmail.com', false , 'Hoc 2', 'Ha 2', '123', null);
 
 insert into users_roles (user_id, role_id)
 values (1, 1);
