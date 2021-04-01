@@ -34,7 +34,7 @@ Step:
     7.2 Create GUI
 8. Create New User Function (lecture 28)
     8.1 Update user controler/service
-    8.2xxx create GUI to add new user (show info, role, submit form + binding data) (not done)
+    8.2 create GUI to add new user (show info, role, submit form + binding data)
 9. Endcode User password (Lec29)
     - Bcrypt pass endcoder by Spring securit
     - Config Spring security / endcoder test /
