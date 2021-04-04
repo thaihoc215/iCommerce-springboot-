@@ -57,3 +57,9 @@ Step:
 14. Update user Enabled status (lec 34)
     - update repo, service and controller(include rest)
     -xxx update GUI for update status (not done)
+15. Photos upload
+    - update form to enanble file upload and show img thumb -> update controller also
+    - File upload util to store upload file
+    - Update usercontroller to save image
+    - Config Spring to expose UserPhotos directory + update listing page to show image
+    - update photo when edit / check and clean user id directory

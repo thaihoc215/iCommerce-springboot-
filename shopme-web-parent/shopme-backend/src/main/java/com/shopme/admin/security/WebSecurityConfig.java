@@ -20,6 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // to make allow public access without authentication
+        http.headers().frameOptions().sameOrigin();
         http.authorizeRequests().anyRequest().permitAll();
         http.csrf().disable();
     }
