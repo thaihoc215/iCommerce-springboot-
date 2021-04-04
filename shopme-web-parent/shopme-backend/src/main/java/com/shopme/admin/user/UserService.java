@@ -4,6 +4,9 @@ import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,8 @@ import java.util.NoSuchElementException;
 @Service
 @Transactional
 public class UserService {
+
+    public static final int USERS_PER_PAGE = 4;
 
     @Autowired
     private UserRepository userRepository;
@@ -26,6 +31,11 @@ public class UserService {
 
     public List<User> listAllUsers() {
         return (List<User>) userRepository.findAll();
+    }
+
+    public Page<User> listByPage(int pageNumber) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, USERS_PER_PAGE);
+        return userRepository.findAll(pageable);
     }
 
     public List<Role> listRoles() {

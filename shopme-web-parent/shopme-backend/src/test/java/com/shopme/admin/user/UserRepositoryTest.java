@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -33,7 +36,7 @@ public class UserRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
 
-    private static final String DEFAULT_EMAIL = "thaihoc2105@gmail.com";
+    private static final String DEFAULT_EMAIL = "nam@codejava.net";
 
     @Test
     public void testCreateFirstUserWithOneRole() {
@@ -74,11 +77,10 @@ public class UserRepositoryTest {
     @Test
     public void testFindUser() {
         User existUser = userRepository.findById(1).get();
-        assertEquals(existUser.getEmail(), "thaihoc2105@gmail.com");
-        assertEquals(existUser.getRoles().size(), 2);
+        assertEquals(existUser.getEmail(), DEFAULT_EMAIL);
+        assertEquals(existUser.getRoles().size(), 1);
         List<String> roles = existUser.getRoles().stream().map(Role::getName).collect(Collectors.toList());
         assertTrue(roles.contains("Admin"));
-        assertTrue(roles.contains("Salesperson"));
     }
 
     @Test
@@ -94,10 +96,6 @@ public class UserRepositoryTest {
         existUser.setEnabled(false);
         userRepository.save(existUser);
         assertFalse(existUser.isEnabled());
-
-        /*Role role = new Role();
-        role.setId(1);
-        existUser.getRoles().remove(role);*/
     }
 
     @Test
@@ -163,8 +161,8 @@ public class UserRepositoryTest {
 
     @Test
     public void testDisableUser() {
-        userRepository.updateEnabledStatus(1, false);
-        User user1 = userRepository.findById(1).get();
+        userRepository.updateEnabledStatus(2, false);
+        User user1 = userRepository.findById(2).get();
         assertFalse(user1.isEnabled());
     }
 
@@ -174,4 +172,16 @@ public class UserRepositoryTest {
         User user1 = userRepository.findById(2).get();
         assertTrue(user1.isEnabled());
     }
+
+    @Test
+    public void testListFirstPage() {
+        int pageNumber = 0; // first page;
+        int pageSize = 4;
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        Page<User> page = userRepository.findAll(pageable);
+        List<User> listUser = page.getContent();
+        assertEquals(listUser.size(), pageSize);
+        listUser.forEach(u -> System.out.println(u));
+    }
+
 }

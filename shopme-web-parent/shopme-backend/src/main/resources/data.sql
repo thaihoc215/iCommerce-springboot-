@@ -65,7 +65,7 @@ INSERT INTO users (id, email, enabled, first_name, last_name, password, photos)
 values (2, 'thaihocdisable@gmail.com', false , 'Hoc 2', 'Ha 2', '123', null);*/
 INSERT INTO `users` (id, email, enabled, first_name, last_name, password, photos)
 VALUES (1,'nam@codejava.net',1,'Nam','Ha Minh','$2a$10$bDqskP9Z/y6BIZnFLgJ8HuwMYaZXD9w2jVk2pYHXgn1k6N4nckleu','namhm.png'),
-       (2,'kanna.allada@gmail.com',1,'Allada','Pavan','$2a$10$zRa/rmQ8JarpYG2bNKftyelKnsUhsHwGB.xmCKTWJClsB7O9wzTnG','Allada Pavan.png')/*,
+       (2,'kanna.allada@gmail.com',1,'Allada','Pavan','$2a$10$zRa/rmQ8JarpYG2bNKftyelKnsUhsHwGB.xmCKTWJClsB7O9wzTnG','Allada Pavan.png'),
        (3,'aecllc.bnk@gmail.com',0,'Bruce','Kitchell','$2a$10$GINThwCjVZAbGnmOe9BIeuDuvDlyfuwZrg/Rsmrjs1Lsq2pnXtO/S','Bruce Kitchell.png'),
        (4,'muhammad.evran13@gmail.com',1,'Muhammad','Evran','$2a$10$UcHWHC72azPVZJb5Ky.Yy.X695WGf1ZkkGMS3WL3B9WqWf2dQD04G','Muhammad Evran.png'),
        (5,'kent.hervey8@gmail.com',1,'Kent','Hervey','$2a$10$YHXRsZ07/Btv.qCgGht.7u2PW.GLWzpVB7eabfgH1mhTVVXffDT6K','KentHervey.png'),
@@ -86,16 +86,16 @@ VALUES (1,'nam@codejava.net',1,'Nam','Ha Minh','$2a$10$bDqskP9Z/y6BIZnFLgJ8HuwMY
        (20,'s.stasovska82@hotmail.com',1,'Svetlana','Stasovska','$2a$10$fcN2cNa7vB.78QnmzfNZEeUBkrwUaM.bVK3iDB.KFQlR15DwL7QZy','Svetlana Stasovska.png'),
        (21,'mikegates2012@gmail.com',1,'Mike','Gates','$2a$10$zIO1tygsw6cB2ymiR.WX0ulr9NKdTlZHqu7w/W/LLwk8HhK7nVnH.','Mike Gates.png'),
        (22,'pedroquintero67@gmail.com',0,'Pedro','Quintero','$2a$10$UPX5EwZw0MyBvbe.7mxg2u8GOl/4KgaUU40iSjr1PLFYvhu35fMmu','Pedro Quintero.png'),
-       (23,'amina.elshal2@yahoo.com',1,'Amina','Elshal','$2a$10$J1yoyqG5vWNe5N663PkgY.h53gfJtTR7Bb8E8u3sXdNbOZxhXgHu.','Amina Elshal.png')*/;
+       (23,'amina.elshal2@yahoo.com',1,'Amina','Elshal','$2a$10$J1yoyqG5vWNe5N663PkgY.h53gfJtTR7Bb8E8u3sXdNbOZxhXgHu.','Amina Elshal.png');
 
 /*insert into users_roles (user_id, role_id)
 values (1, 1);
 insert into users_roles (user_id, role_id)
 values (1, 2);*/
 INSERT INTO `users_roles` (user_id, role_id)
-VALUES (1,1),(2,1),(3,2)/*,(9,2),(10,2),(11,2),(12,2),(13,2),(19,2),(20,2),(4,3),(5,3),(6,3),
+VALUES (1,1),(2,1),(3,2),(9,2),(10,2),(11,2),(12,2),(13,2),(19,2),(20,2),(4,3),(5,3),(6,3),
        (7,3),(8,3),(11,3),(15,3),(18,3),(20,3),(14,4),(15,4),(16,4),(17,4),(18,4),(5,5),(14,5),
-       (19,5),(20,5),(21,5),(22,5),(23,5)*/;
+       (19,5),(20,5),(21,5),(22,5),(23,5);
 
 
 

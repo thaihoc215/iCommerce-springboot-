@@ -26,9 +26,13 @@ public class UserRestController {
     private UserService userService;
 
     @GetMapping("/users")
-    public List<User> listAll(Model model) {
-        List<User> listUsers = userService.listAllUsers();
-        return listUsers;
+    public List<User> listAll() {
+        return userService.listAllUsers();
+    }
+
+    @GetMapping("/users/page/{pageNum}")
+    public List<User> listByPage(@PathVariable(name = "pageNum") int pageNum) {
+        return userService.listByPage(pageNum).getContent();
     }
 
     @PostMapping("/users/save")

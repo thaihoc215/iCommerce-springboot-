@@ -63,3 +63,7 @@ Step:
     - Update usercontroller to save image
     - Config Spring to expose UserPhotos directory + update listing page to show image
     - update photo when edit / check and clean user id directory
+16. Code paging (Lec 37)
+    - extend and update user service list user by page number
+    - update controller/restController to return first page and paging
+    - update GUI for pagination
