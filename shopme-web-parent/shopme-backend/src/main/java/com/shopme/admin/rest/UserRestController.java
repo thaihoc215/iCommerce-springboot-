@@ -31,8 +31,8 @@ public class UserRestController {
     }
 
     @GetMapping("/users/page/{pageNum}")
-    public List<User> listByPage(@PathVariable(name = "pageNum") int pageNum) {
-        return userService.listByPage(pageNum).getContent();
+    public List<User> listByPage(@PathVariable(name = "pageNum") int pageNum, @Param("sortField") String sortField, @Param("sortDir") String sortDir) {
+        return userService.listByPage(pageNum, sortField, sortDir).getContent();
     }
 
     @PostMapping("/users/save")

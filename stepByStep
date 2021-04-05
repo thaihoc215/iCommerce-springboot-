@@ -67,3 +67,6 @@ Step:
     - extend and update user service list user by page number
     - update controller/restController to return first page and paging
     - update GUI for pagination
+17. Sorting function
+    - enable sorting in userservice/cotroller
+    - update GUI for sort clickable
