@@ -70,3 +70,7 @@ Step:
 17. Sorting function
     - enable sorting in userservice/cotroller
     - update GUI for sort clickable
+18. Filter function (lec 39) - should work with pagination
+    - Searchable : id, email, first/last name
+    - full name will sear first+last name
+    - update repo/service for search query and input keyword + user controller for url

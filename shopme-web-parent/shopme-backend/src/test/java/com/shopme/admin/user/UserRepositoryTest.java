@@ -30,6 +30,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Rollback(value = false)
 public class UserRepositoryTest {
 
+    private static final int START_PAGE_NUMBER = 0;
+    private static final int PAGE_SIZE = 4;
+
     @Autowired
     private UserRepository userRepository;
 
@@ -175,12 +178,23 @@ public class UserRepositoryTest {
 
     @Test
     public void testListFirstPage() {
-        int pageNumber = 0; // first page;
-        int pageSize = 4;
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        Pageable pageable = PageRequest.of(START_PAGE_NUMBER, PAGE_SIZE);
         Page<User> page = userRepository.findAll(pageable);
         List<User> listUser = page.getContent();
-        assertEquals(listUser.size(), pageSize);
+        assertEquals(listUser.size(), PAGE_SIZE);
+        listUser.forEach(u -> System.out.println(u));
+    }
+
+    @Test
+    public void testSearchUser() {
+        String keyword = "bruce";
+        int pageNumber = 0; // first page;
+        int pageSize = 4;
+        Pageable pageable = PageRequest.of(START_PAGE_NUMBER, PAGE_SIZE);
+        Page<User> page = userRepository.findAll(keyword, pageable);
+        List<User> listUser = page.getContent();
+        assertTrue(listUser.size() > 0);
+
         listUser.forEach(u -> System.out.println(u));
     }
 
