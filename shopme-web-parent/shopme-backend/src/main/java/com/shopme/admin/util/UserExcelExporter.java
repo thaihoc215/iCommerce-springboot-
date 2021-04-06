@@ -8,16 +8,10 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.supercsv.io.CsvBeanWriter;
-import org.supercsv.io.ICsvBeanWriter;
-import org.supercsv.prefs.CsvPreference;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class UserExcelExporter extends AbstractExporter {
@@ -31,20 +25,8 @@ public class UserExcelExporter extends AbstractExporter {
 
     }
 
-
-
     public void export(List<User> userList, HttpServletResponse response) throws IOException {
         super.setResponseHeader(response, "application/octet-stream", ".xlsx");
-
-
-        String[] fieldMapping = {"id", "email", "firstName", "lastName", "roles", "enabled"};
-
-//        csvBeanWriter.writeHeader(csvHeader);
-//
-//        for (User user : userList) {
-//            csvBeanWriter.write(user, fieldMapping);
-//        }
-//        csvBeanWriter.close();
 
         writerHeaderLine();
         writeDataLine(userList);
