@@ -14,6 +14,10 @@ curl -d "{\"email\":\"testcurl@yahoo.com\",\"password\":\"4444\",\"firstName\":\
     http://localhost:8080/shopmeadmin/rest/users/save
 DELETE curl -X DELETE http://localhost:8080/shopmeadmin/rest/users/delete/9
 
+@Modify?
+concat in SQL?
+HttpServletResponse?
+
 Step:
 1.Create root project as maven(gradle project)
 2.Create ShopmeCommon project with spring init (JPA) and set module to root project (library project)
@@ -77,3 +81,7 @@ Step:
 19. Refactor code #1
     - User thymeleaf fragments
     - Show only the affected user after creating & updating a user
+20. export csv
+    - add href for export csv
+    - add csv export function for controller
+    - add exporter/csv writter

@@ -1,5 +1,6 @@
 package com.shopme.admin.full;
 
+import com.shopme.admin.util.UserCsvExporter;
 import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.admin.user.UserService;
 import com.shopme.admin.util.FileUploadUtil;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -143,5 +145,12 @@ public class UserController {
         String message = "The User id: " + id + " has been " + statusMes;
         redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/users";
+    }
+
+    @GetMapping("/users/export/csv")
+    public void exportCsv(HttpServletResponse response) throws IOException {
+        List<User> users = userService.listAllUsers();
+        UserCsvExporter userCsvExporter = new UserCsvExporter();
+        userCsvExporter.export(users, response);
     }
 }
