@@ -74,3 +74,6 @@ Step:
     - Searchable : id, email, first/last name
     - full name will sear first+last name
     - update repo/service for search query and input keyword + user controller for url
+19. Refactor code #1
+    - User thymeleaf fragments
+    - Show only the affected user after creating & updating a user
