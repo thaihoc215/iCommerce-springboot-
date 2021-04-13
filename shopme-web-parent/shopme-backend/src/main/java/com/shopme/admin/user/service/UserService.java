@@ -1,6 +1,8 @@
-package com.shopme.admin.user;
+package com.shopme.admin.user.service;
 
 import com.shopme.admin.exception.UserNotFoundException;
+import com.shopme.admin.user.RoleRepository;
+import com.shopme.admin.user.UserRepository;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;

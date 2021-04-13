@@ -17,6 +17,7 @@ DELETE curl -X DELETE http://localhost:8080/shopmeadmin/rest/users/delete/9
 @Modify?
 concat in SQL?
 HttpServletResponse?
+authorizeRequests.usernameparameter???
 
 Step:
 1.Create root project as maven(gradle project)
@@ -89,3 +90,10 @@ Step:
     - add href for export excel
     - add excel export function for controller
     - add Apache POI excel lib
+SECTION 2: User authentication
+48. User login page
+    - enable security (websecurityconfig)
+    - configre customlogin page follow websecurity
+    - create ShopmeUserDetails impl UserDetails (of MVC) to load User
+    - create UserDetailService to perform authentication (implement from UserDetailsService -of MVC)
+50. show user full name and logout

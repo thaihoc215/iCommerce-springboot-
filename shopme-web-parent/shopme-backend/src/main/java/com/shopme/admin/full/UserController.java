@@ -2,7 +2,7 @@ package com.shopme.admin.full;
 
 import com.shopme.admin.util.UserCsvExporter;
 import com.shopme.admin.exception.UserNotFoundException;
-import com.shopme.admin.user.UserService;
+import com.shopme.admin.user.service.UserService;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.admin.util.UserExcelExporter;
 import com.shopme.admin.util.UserPdfExporter;
