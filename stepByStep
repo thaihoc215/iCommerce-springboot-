@@ -97,3 +97,6 @@ SECTION 2: User authentication
     - create ShopmeUserDetails impl UserDetails (of MVC) to load User
     - create UserDetailService to perform authentication (implement from UserDetailsService -of MVC)
 50. show user full name and logout
+51. code logout function
+    - Spring Security require logiout must send in POST
+    - prevent CSRF attack (cross site request forgery)
