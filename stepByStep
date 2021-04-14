@@ -100,3 +100,6 @@ SECTION 2: User authentication
 51. code logout function
     - Spring Security require logiout must send in POST
     - prevent CSRF attack (cross site request forgery)
+52. Refactor code 2
+    - Create thymeleaf for page head, navigation and footer
+    - Move common javascript to common.js

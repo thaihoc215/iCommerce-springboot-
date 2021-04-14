@@ -36,6 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        // config will apply at runtime
         auth.authenticationProvider(daoAuthenticationProvider());
     }
 
@@ -50,11 +51,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("email") //default parameter to login
-                .permitAll();
+                .permitAll()
+                .and().logout().permitAll();
+
+//        form th:action="@{/logout} will automatic map with spring authen logout?
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
     }
+
+    //configure(AuthenticationManagerBuilder auth) -> daoAuthenticationProvider -> use bean UserDetailsService userDetailsService()
+    // -> configure(HttpSecurity http) -> configure(WebSecurity web)
+    // -> khi loggin thi lay info tu authenticationProvider
+    // sau do lay data ShopmeUserDetailsService#loadUserByUsername will invoke -> pass username/password tu user fromdb
+    // then check
 }
