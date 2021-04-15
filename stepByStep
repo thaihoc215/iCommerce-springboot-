@@ -113,3 +113,6 @@ SECTION 2: User authentication
     - Create new controller (account) for update user detail
     - update userservice also
     - validate re-enter password
+55 .keynote
+    - every post request must include _csrf token -> prevent cross site request forgery attack
+    - update csrf send for post check email in create user and update user
