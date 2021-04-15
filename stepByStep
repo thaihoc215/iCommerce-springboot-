@@ -107,3 +107,7 @@ SECTION 2: User authentication
     - set checkbox name is-match "remember-me" -> spring will autoconfig to extend cookies
     - jsesson expired when browser end then need to extend in confige by http security
     - create specified session key (allow cookies survive) to avoid relogin after re-run
+54. Update Account Details
+    - update user_form for edit account detail
+    - Create new controller (account)
+    -

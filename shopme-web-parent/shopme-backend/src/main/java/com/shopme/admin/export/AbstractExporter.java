@@ -1,13 +1,10 @@
-package com.shopme.admin.util;
-
-import com.shopme.common.entity.User;
+package com.shopme.admin.export;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class AbstractExporter {
 
