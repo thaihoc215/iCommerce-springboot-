@@ -131,9 +131,10 @@
 
     function checkEmailUnique(form) {
         let url = "[[@{/rest/users/check_email}]]";
-        // csrf = $("input[name='_crsf']").val(); security check
+        // crsfValue = $("input[name='_crsf']").val(); security check
         let userEmail = $("#email").val();
         let userId = $("#id").val();
+        // let params = {id: userId, email: userEmail, _crsf: crsfValue};
         let params = {id: userId, email: userEmail};
 
         $.post(url, params, function (response) {

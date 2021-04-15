@@ -17,6 +17,7 @@ import org.springframework.util.StringUtils;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -56,6 +57,11 @@ public class UserService {
         return (List<Role>) roleRepository.findAll();
     }
 
+    /**
+     * Update/Save user
+     * @param user user information
+     * @return user saved
+     */
     public User save(User user) {
         boolean isUpdatingUser = user.getId() != null;
         if (isUpdatingUser) {
@@ -69,6 +75,31 @@ public class UserService {
             encodePassword(user);
         }
         return userRepository.save(user);
+    }
+
+    /**
+     * update account detail
+     * @param userInForm user information
+     * @return
+     */
+    public User updateAccount(User userInForm) throws UserNotFoundException {
+        Optional<User> userOption = userRepository.findById(userInForm.getId());
+        if (userOption.isPresent()) {
+            User user = userOption.get();
+            if (!userInForm.getPassword().isEmpty()) {
+                user.setPassword(userInForm.getPassword());
+                encodePassword(user);
+            }
+            if (userInForm.getPhotos() != null) {
+                user.setPhotos(userInForm.getPhotos());
+            }
+
+            user.setFirstName(userInForm.getFirstName());
+            user.setLastName(userInForm.getLastName());
+
+            return userRepository.save(user);
+        }
+        throw new UserNotFoundException("Could not find any user with id: " + userInForm.getId());
     }
 
     private void encodePassword(User user) {
