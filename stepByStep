@@ -124,4 +124,4 @@ SECTION 2: User authentication
 60. Show custom error page
     - user friendly error massage
     - make ui of error pages match ui of the application
-    - crate html custom error page
+    - crate html custom error page (must be named: "error.html")
