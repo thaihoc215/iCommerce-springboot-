@@ -116,3 +116,7 @@ SECTION 2: User authentication
 55 .keynote
     - every post request must include _csrf token -> prevent cross site request forgery attack
     - update csrf send for post check email in create user and update user
+58. Authorization basic
+    - user Spring security api (hasRole()/anyRole() can access anyMatch().)
+    - show user and roles in homepage
+    - implement authorization
