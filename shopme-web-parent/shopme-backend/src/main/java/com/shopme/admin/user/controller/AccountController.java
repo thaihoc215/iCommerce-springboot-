@@ -1,7 +1,7 @@
-package com.shopme.admin.full;
+package com.shopme.admin.user.controller;
 
 import com.shopme.admin.exception.UserNotFoundException;
-import com.shopme.admin.export.FileUploadUtil;
+import com.shopme.admin.user.export.FileUploadUtil;
 import com.shopme.admin.security.ShopmeUserDetails;
 import com.shopme.admin.user.service.UserService;
 import com.shopme.common.entity.User;
@@ -29,7 +29,7 @@ public class AccountController {
         User user = userService.getByEmail(userEmail);
         model.addAttribute("user", user);
 
-        return "account_form";
+        return "users/account_form";
     }
 
     @PostMapping("/account/update")

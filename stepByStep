@@ -120,3 +120,8 @@ SECTION 2: User authentication
     - user Spring security api (hasRole()/anyRole() can access anyMatch().)
     - show user and roles in homepage
     - implement authorization
+59. Code refactor #3
+60. Show custom error page
+    - user friendly error massage
+    - make ui of error pages match ui of the application
+    - crate html custom error page

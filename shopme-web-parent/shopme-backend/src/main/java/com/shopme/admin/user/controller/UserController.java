@@ -1,11 +1,11 @@
-package com.shopme.admin.full;
+package com.shopme.admin.user.controller;
 
-import com.shopme.admin.export.UserCsvExporter;
+import com.shopme.admin.user.export.UserCsvExporter;
 import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.admin.user.service.UserService;
-import com.shopme.admin.export.FileUploadUtil;
-import com.shopme.admin.export.UserExcelExporter;
-import com.shopme.admin.export.UserPdfExporter;
+import com.shopme.admin.user.export.FileUploadUtil;
+import com.shopme.admin.user.export.UserExcelExporter;
+import com.shopme.admin.user.export.UserPdfExporter;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +64,7 @@ public class UserController {
 
         model.addAttribute("keyword", keyword);
 
-        return "users";
+        return "users/users";
     }
 
     @GetMapping("/users/new")
@@ -78,7 +78,7 @@ public class UserController {
         model.addAttribute("listRoles", listRoles);
         model.addAttribute("pageTitle", "Create New User");
 
-        return "user_form";
+        return "users/user_form";
     }
 
     @PostMapping("/users/save")
@@ -120,7 +120,7 @@ public class UserController {
             List<Role> listRoles = userService.listRoles();
             model.addAttribute("listRoles", listRoles);
 
-            return "user_form";
+            return "users/user_form";
         } catch (UserNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
             return "redirect:/users";
