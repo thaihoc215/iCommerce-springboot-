@@ -32,12 +32,33 @@ public class Category {
     @Column(name = "enabled")
     private boolean enabled;
 
-    @OneToOne
+    @OneToOne //default eager
     @JoinColumn(name = "parent_id")
     private Category parent;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent") //default lazy
     private Set<Category> children = new HashSet<>();
+
+    public Category() {
+
+    }
+
+    public Category(String name) {
+        this.name = name;
+        this.alias = name;
+        this.image = "default.jpg";
+    }
+
+    public Category(String name, String alias, String image) {
+        this.name = name;
+        this.alias = alias;
+        this.image = "default.jpg";
+    }
+
+    public Category(String name, Category parent) {
+        this(name);
+        this.parent = parent;
+    }
 
     public Integer getId() {
         return id;
