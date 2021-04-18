@@ -125,3 +125,11 @@ SECTION 2: User authentication
     - user friendly error massage
     - make ui of error pages match ui of the application
     - crate html custom error page (must be named: "error.html")
+62. Config logging for shopme admin
+    - config log in application.properties -> logging.level.root
+    - specified log file -> logging.file.name=
+    - configure rolling file logging
+    - write java code logging
+    - can see more in code java youtube channel
+SECTION: CATEGORY MANAGEMENT
+65. Category entity and repository
