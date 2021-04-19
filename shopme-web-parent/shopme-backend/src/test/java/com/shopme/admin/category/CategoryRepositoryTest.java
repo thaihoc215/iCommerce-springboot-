@@ -10,7 +10,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -68,7 +67,7 @@ public class CategoryRepositoryTest {
         for (Category category : all) {
             if (category.getParent() == null) {
                 System.out.println(category.getName());
-                System.out.println("Sub category 1");
+//                System.out.println("Sub category 1");
                 Set<Category> children = category.getChildren();
                 for (Category sub : children) {
                     System.out.println("--" + sub.getName());

@@ -44,6 +44,13 @@ public class Category {
 
     }
 
+    public Category(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+        this.alias = name;
+        this.image = "default.jpg";
+    }
+
     public Category(String name) {
         this.name = name;
         this.alias = name;
@@ -120,8 +127,8 @@ public class Category {
     @Transient
     public String getPhotosImagePath() {
         if (id == null || image == null) {
-            return "/images/default-user.png";
+            return "/images/image-thumbnail.png";
         }
-        return "/user-photos/" + id + "/" + this.image;
+        return "../category-images/" + id + "/" + this.image;
     }
 }

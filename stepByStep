@@ -138,3 +138,7 @@ SECTION: CATEGORY MANAGEMENT
     - create gui for categories
     - create controller/service to list categories (/categories)
     - config security for admin/editor can view category
+68. Code category form
+    - create category form gui
+    - update controller to forward create form
+    - update service to get parent cat
