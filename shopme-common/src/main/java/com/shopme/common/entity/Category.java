@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -114,5 +115,13 @@ public class Category {
 
     public void setChildren(Set<Category> children) {
         this.children = children;
+    }
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (id == null || image == null) {
+            return "/images/default-user.png";
+        }
+        return "/user-photos/" + id + "/" + this.image;
     }
 }

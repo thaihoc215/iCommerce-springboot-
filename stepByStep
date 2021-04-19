@@ -134,3 +134,7 @@ SECTION 2: User authentication
 SECTION: CATEGORY MANAGEMENT
 65. Category entity and repository
 66. Create category unit test
+67. Exercise Write internal code for listing categories
+    - create gui for categories
+    - create controller/service to list categories (/categories)
+    - config security for admin/editor can view category
