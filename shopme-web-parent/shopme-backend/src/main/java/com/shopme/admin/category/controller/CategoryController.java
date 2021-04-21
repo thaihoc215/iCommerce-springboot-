@@ -1,6 +1,7 @@
 package com.shopme.admin.category.controller;
 
 import com.shopme.admin.category.service.CategoryService;
+import com.shopme.admin.exception.CategoryNotFoundException;
 import com.shopme.admin.user.export.FileUploadUtil;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -53,10 +55,30 @@ public class CategoryController {
             String uploadDir = "../category-images/" + catId; //to go to shopme parent
             FileUploadUtil.cleanDirectory(uploadDir);
             FileUploadUtil.saveFile(uploadDir, fileNameSelected, multipartFile);
+        } else {
+            categoryService.save(category);
         }
 
         redirectAttributes.addFlashAttribute("message", "The category has been saved " +
                 "successfully");
         return "redirect:/categories";
+    }
+
+    @GetMapping("/categories/edit/{id}")
+    public String editCategory(@PathVariable("id") Integer id, Model model,
+                           RedirectAttributes redirectAttributes) {
+        try {
+            Category catById = categoryService.getCategoryById(id);
+            model.addAttribute("category", catById);
+            model.addAttribute("pageTitle", "Edit Category Id: " + id);
+
+            List<Category> listCategories = categoryService.listCategoriesUsedInform();
+            model.addAttribute("listCategories", listCategories);
+
+            return "categories/category_form";
+        } catch (CategoryNotFoundException e) {
+            redirectAttributes.addFlashAttribute("message", e.getMessage());
+            return "redirect:/categories";
+        }
     }
 }

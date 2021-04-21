@@ -146,3 +146,6 @@ SECTION: CATEGORY MANAGEMENT
     - add function to add new categories
 70. List categories in Hierarchical form
     - update repository to get root and list of sub cats
+71. Exercise Update Category function
+    - image not required (no upload, do nothing with cur image)
+    - new image upload, delete old image

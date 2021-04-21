@@ -1,6 +1,7 @@
 package com.shopme.admin.category.service;
 
 import com.shopme.admin.category.CategoryRepository;
+import com.shopme.admin.exception.CategoryNotFoundException;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 @Service
@@ -81,5 +83,14 @@ public class CategoryService {
 
     public Category save(Category user) {
         return categoryRepository.save(user);
+    }
+
+
+    public Category getCategoryById(Integer id) throws CategoryNotFoundException {
+        try {
+            return categoryRepository.findById(id).get();
+        } catch (NoSuchElementException e) {
+            throw new CategoryNotFoundException("Could not find any user with id: " + id);
+        }
     }
 }
