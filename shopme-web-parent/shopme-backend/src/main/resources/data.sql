@@ -118,6 +118,12 @@ INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (9, 'Gaming Laptops', 0, 'default.jpg', 'Gaming Laptops', 4);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (10, 'Iphone', 0, 'default.jpg', 'Iphone', 7);
+INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
+VALUES (12, 'books', 1, 'books.png', 'Books', null);
+INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
+VALUES (13, 'hard_drive', 1, 'internal hard drive.png', 'Internal Hard Drive', null);
+INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
+VALUES (14, 'lenses', 1, 'lenses.png', 'Lenses', 6);
 
 
 

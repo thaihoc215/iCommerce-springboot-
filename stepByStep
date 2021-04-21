@@ -142,3 +142,7 @@ SECTION: CATEGORY MANAGEMENT
     - create category form gui
     - update controller to forward create form
     - update service to get parent cat
+69. Code category function
+    - add function to add new categories
+70. List categories in Hierarchical form
+    - update repository to get root and list of sub cats

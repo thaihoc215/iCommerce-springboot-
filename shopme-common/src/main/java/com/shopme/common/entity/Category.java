@@ -63,6 +63,30 @@ public class Category {
         this.image = "default.jpg";
     }
 
+    public Category(Integer id, String name, String alias, String image, boolean enabled) {
+        this.id = id;
+        this.name = name;
+        this.alias = alias;
+        this.image = image;
+        this.enabled = enabled;
+    }
+
+    public Category(Category category) {
+        this.id = category.getId();
+        this.name = category.getName();
+        this.alias = category.getAlias();
+        this.image = category.getImage();
+        this.enabled = category.isEnabled();
+    }
+
+    public Category(Category category, String subName) {
+        this.id = category.getId();
+        this.name = subName;
+        this.alias = category.getAlias();
+        this.image = category.getImage();
+        this.enabled = category.isEnabled();
+    }
+
     public Category(String name, Category parent) {
         this(name);
         this.parent = parent;
@@ -125,10 +149,7 @@ public class Category {
     }
 
     @Transient
-    public String getPhotosImagePath() {
-        if (id == null || image == null) {
-            return "/images/image-thumbnail.png";
-        }
-        return "../category-images/" + id + "/" + this.image;
+    public String getImagePath() {
+        return "/category-images/" + id + "/" + this.image;
     }
 }
