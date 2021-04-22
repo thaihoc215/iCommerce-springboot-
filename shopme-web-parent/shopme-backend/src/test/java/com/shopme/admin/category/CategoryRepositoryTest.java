@@ -15,6 +15,7 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest(showSql = false)
@@ -94,5 +95,23 @@ public class CategoryRepositoryTest {
     public void testListRootCategories() {
         List<Category> categories = categoryRepository.findRootCategories();
         categories.forEach(cat -> System.out.println(cat.getName()));
+    }
+
+    @Test
+    public void testFindByName() {
+        String name = "Computers";
+        Category cat = categoryRepository.findByName(name);
+
+        assertNotNull(cat);
+        assertEquals(cat.getName(), name);
+    }
+
+    @Test
+    public void testFindByAlias() {
+        String alias = "electronics";
+        Category cat = categoryRepository.findByAlias(alias);
+
+        assertNotNull(cat);
+        assertEquals(cat.getAlias(), alias);
     }
 }

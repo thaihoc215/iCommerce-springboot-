@@ -149,3 +149,8 @@ SECTION: CATEGORY MANAGEMENT
 71. Exercise Update Category function
     - image not required (no upload, do nothing with cur image)
     - new image upload, delete old image
+72. Check Uniqueness of Category
+    - Name and alias must be unique
+    - update catrestcontroller to check
+    - update repo to findByname and alias + test
+    - update form and controller -> call rest web service using jquery and show modal dialog

@@ -101,7 +101,7 @@ VALUES (1,1),(2,1),(3,2),(9,2),(10,2),(11,2),(12,2),(13,2),(19,2),(20,2),(4,3),(
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (1, 'Computers', 1, 'computers.png', 'Computers', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (2, 'Electronics', 1, 'electronics.png', 'Electronics', null);
+VALUES (2, 'electronics', 1, 'electronics.png', 'Electronics', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (3, 'Desktops', 1, 'desktop computers.png', 'desktops', 1);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)

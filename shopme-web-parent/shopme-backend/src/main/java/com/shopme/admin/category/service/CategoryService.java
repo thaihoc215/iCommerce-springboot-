@@ -93,4 +93,21 @@ public class CategoryService {
             throw new CategoryNotFoundException("Could not find any user with id: " + id);
         }
     }
+
+    public String checkUnique(Integer id, String name, String alias) {
+        boolean isCreatingNew = (id == null || id == 0);
+
+        Category category = categoryRepository.findByName(name);
+
+        if (isCreatingNew) {
+            if (category != null) {
+                return "DuplicateName";
+            } else {
+                if (categoryRepository.findByAlias(alias) != null) {
+                    return "DuplicateAlias";
+                }
+            }
+        }
+        return "OK";
+    }
 }

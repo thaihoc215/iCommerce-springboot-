@@ -44,6 +44,12 @@ public class Category {
 
     }
 
+    public Category(String name) {
+        this.name = name;
+        this.alias = name;
+        this.image = "default.jpg";
+    }
+
     public Category(Integer id, String name) {
         this.id = id;
         this.name = name;
@@ -51,10 +57,10 @@ public class Category {
         this.image = "default.jpg";
     }
 
-    public Category(String name) {
+    public Category(Integer id, String name, String alias) {
+        this.id = id;
         this.name = name;
-        this.alias = name;
-        this.image = "default.jpg";
+        this.alias = alias;
     }
 
     public Category(String name, String alias, String image) {
