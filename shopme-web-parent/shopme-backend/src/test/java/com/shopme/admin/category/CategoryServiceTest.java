@@ -89,4 +89,49 @@ public class CategoryServiceTest {
         String result = categoryService.checkUnique(id, name, alias);
         assertEquals(result, "OK");
     }
+
+    @Test
+    public void testCheckUniqueInEditModeReturnDuplicateName() {
+        Integer id = 1;
+        String name = "Computers";
+        String alias = "abc";
+
+        Category categoryCreate = new Category(2, name, alias);
+
+        Mockito.when(categoryRepository.findByName(name)).thenReturn(categoryCreate);
+        Mockito.when(categoryRepository.findByAlias("alias")).thenReturn(null);
+
+        String result = categoryService.checkUnique(id, name, alias);
+        assertEquals(result, "DuplicateName");
+    }
+
+    @Test
+    public void testCheckUniqueInEditModeReturnDuplicateAlias() {
+        Integer id = 1;
+        String name = "abc";
+        String alias = "computers";
+
+        Category categoryCreate = new Category(2, name, alias);
+
+        Mockito.when(categoryRepository.findByName(name)).thenReturn(null);
+        Mockito.when(categoryRepository.findByAlias(alias)).thenReturn(categoryCreate);
+
+        String result = categoryService.checkUnique(id, name, alias);
+        assertEquals(result, "DuplicateAlias");
+    }
+
+    @Test
+    public void testCheckUniqueInEditModeReturnOk() {
+        Integer id = null;
+        String name = "abc";
+        String alias = "abc";
+
+        Category categoryCreate = new Category(1, name, alias);
+
+        Mockito.when(categoryRepository.findByName(name)).thenReturn(null);
+        Mockito.when(categoryRepository.findByAlias(alias)).thenReturn(null);
+
+        String result = categoryService.checkUnique(id, name, alias);
+        assertEquals(result, "OK");
+    }
 }
