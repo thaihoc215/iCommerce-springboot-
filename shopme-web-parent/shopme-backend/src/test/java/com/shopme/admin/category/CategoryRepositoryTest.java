@@ -1,6 +1,7 @@
 package com.shopme.admin.category;
 
 import com.shopme.common.entity.Category;
+import com.shopme.common.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -114,5 +117,29 @@ public class CategoryRepositoryTest {
 
         assertNotNull(cat);
         assertEquals(cat.getAlias(), alias);
+    }
+
+    @Test
+    public void testDisableCategory() {
+        categoryRepository.updateEnabledStatus(2, false);
+        Category cat = categoryRepository.findById(2).get();
+        assertFalse(cat.isEnabled());
+    }
+
+    @Test
+    public void testEnableCategory() {
+        categoryRepository.updateEnabledStatus(2, true);
+        Category cat = categoryRepository.findById(2).get();
+        assertTrue(cat.isEnabled());
+    }
+
+    @Test
+    public void testDeleteCategory() {
+        Category category = new Category("test", "test", null);
+        Integer saveCatId = categoryRepository.save(category).getId();
+        assertTrue(categoryRepository.findById(saveCatId).isPresent());
+
+        categoryRepository.deleteById(saveCatId);
+        assertFalse(categoryRepository.findById(saveCatId).isPresent());
     }
 }

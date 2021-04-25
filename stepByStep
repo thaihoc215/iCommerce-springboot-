@@ -157,3 +157,10 @@ SECTION: CATEGORY MANAGEMENT
 73. Sort category
     - sort by name asc desc
     - sort and show by hierarchical (sub category)
+74.75 update status
+    - delete by catId
+    - count first, if > 0 then delete
+    - only category have now children can be delete
+    - also delete the category image directory
+    - move common code into common_list.js
+    - move modal dialog into thymeleaf fragment

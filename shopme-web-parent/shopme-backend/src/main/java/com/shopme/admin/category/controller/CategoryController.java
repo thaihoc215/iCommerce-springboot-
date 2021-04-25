@@ -2,6 +2,7 @@ package com.shopme.admin.category.controller;
 
 import com.shopme.admin.category.service.CategoryService;
 import com.shopme.admin.exception.CategoryNotFoundException;
+import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.admin.user.export.FileUploadUtil;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -88,5 +90,31 @@ public class CategoryController {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
             return "redirect:/categories";
         }
+    }
+
+
+    @GetMapping("/categories/{id}/enabled/{status}")
+    public String updateCatStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean status,
+                                   RedirectAttributes redirectAttributes) {
+        categoryService.updateCategoryEnabledStatus(id, status);
+        String statusMes = status ? "enabled" : "disabled";
+        String message = "Category id: " + id + " has been " + statusMes;
+        redirectAttributes.addFlashAttribute("message", message);
+        return "redirect:/categories";
+    }
+
+    @GetMapping("/categories/delete/{id}")
+    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
+        try {
+            categoryService.deleteCategory(id);
+            String uploadDir = "../category-images/" + id; //to go to shopme parent
+            FileUploadUtil.removeDir(uploadDir);
+
+            redirectAttributes.addFlashAttribute("message", "The user ID: " + id +
+                    " has been deleted successfully");
+        } catch (CategoryNotFoundException e) {
+            redirectAttributes.addFlashAttribute("message", e.getMessage());
+        }
+        return "redirect:/categories";
     }
 }

@@ -14,6 +14,8 @@
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common_form.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common_list.js}"></script>
 </head>
 <body>
 
@@ -40,5 +42,26 @@
        th:href="@{'/users/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} +
                            ${keyword != null ? '&keyword=' + keyword : ''}}">[[${label}]]
     </a>
+
+    <div th:fragment="category_status" th:remove="tag">
+        <a th:if="${category.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+           th:href="@{'/categories/' + ${category.id} + '/enabled/false'}"
+           title="Disable this category"></a>
+        <a th:if="${category.enabled == false}" class="fas fa-circle fa-2x icon-dark"
+           th:href="@{'/categories/' + ${category.id} + '/enabled/true'}" title="Enable this category"></a>
+    </div>
+
+    <div th:fragment="category_actions" th:remove="tag">
+        <a href="#" class="fas fa-edit fa-2x icon-green"
+           th:href="@{'/categories/edit/' + ${category.id}}"
+           title="Edit this category"></a>
+        &nbsp;
+        <th:block th:if="${category.hasChildren == false}">
+            <a href="#" class="fas fa-trash fa-2x icon-dark link-delete"
+               th:href="@{'/categories/delete/' + ${category.id}}"
+               th:entityId="${category.id}"
+               title="Delete this category"></a>
+        </th:block>
+    </div>
 </body>
 </html>

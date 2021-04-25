@@ -40,6 +40,9 @@ public class Category {
     @OneToMany(mappedBy = "parent") //default lazy
     private Set<Category> children = new HashSet<>();
 
+    @Transient
+    private boolean hasChildren;
+
     public Category() {
 
     }
@@ -83,6 +86,7 @@ public class Category {
         this.alias = category.getAlias();
         this.image = category.getImage();
         this.enabled = category.isEnabled();
+        this.hasChildren = category.getChildren().size() > 0;
     }
 
     public Category(Category category, String subName) {
@@ -91,6 +95,7 @@ public class Category {
         this.alias = category.getAlias();
         this.image = category.getImage();
         this.enabled = category.isEnabled();
+        this.hasChildren = category.getChildren().size() > 0;
     }
 
     public Category(String name, Category parent) {
@@ -160,5 +165,13 @@ public class Category {
             return "/images/image-thumbnail.png";
         }
         return "/category-images/" + id + "/" + this.image;
+    }
+
+    public boolean isHasChildren() {
+        return hasChildren;
+    }
+
+    public void setHasChildren(boolean hasChildren) {
+        this.hasChildren = hasChildren;
     }
 }

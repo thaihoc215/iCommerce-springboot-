@@ -2,6 +2,7 @@ package com.shopme.admin.category;
 
 import com.shopme.common.entity.Category;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -16,4 +17,10 @@ public interface CategoryRepository extends PagingAndSortingRepository<Category,
 
     Category findByAlias(String alias);
 
+    //@Query("Update Category c set c.enabled = ?2 where c.id = ?1")
+    @Query("Update Category c set c.enabled = :enabled where c.id = :id")
+    @Modifying
+    void updateEnabledStatus(Integer id, boolean enabled);
+
+    Long countById(Integer id);
 }
