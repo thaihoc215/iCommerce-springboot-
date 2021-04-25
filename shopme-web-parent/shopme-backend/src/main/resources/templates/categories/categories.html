@@ -49,9 +49,12 @@
 <!--                    <th class="hideable-column">
                         <th th:replace="fragments::column_link('name', 'Category Name', 'tag')"></th>
                     </th>-->
-                    <th th:replace="fragments::column_link('name', 'Category Name', 'none')"></th>
-                    <th th:replace="fragments::column_link('alias', 'Alias', 'none')"></th>
-                    <th th:replace="fragments::column_link('enabled', 'Enabled', 'none')"></th>
+                    <th>
+                        <a class="text-white" th:href="@{'/categories?sortDir=' + ${reverseSortDir}}">Category Name</a>
+                        <span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+                    </th>
+                    <th>Alias</th>
+                    <th>Enabled</th>
                     <th></th>
                 </tr>
             </thead>

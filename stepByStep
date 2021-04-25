@@ -154,3 +154,6 @@ SECTION: CATEGORY MANAGEMENT
     - update catrestcontroller to check
     - update repo to findByname and alias + test
     - update form and controller -> call rest web service using jquery and show modal dialog
+73. Sort category
+    - sort by name asc desc
+    - sort and show by hierarchical (sub category)

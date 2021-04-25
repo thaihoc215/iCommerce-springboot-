@@ -103,11 +103,11 @@ VALUES (1, 'Computers', 1, 'computers.png', 'Computers', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (2, 'electronics', 1, 'electronics.png', 'Electronics', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (3, 'Desktops', 1, 'desktop computers.png', 'desktops', 1);
+VALUES (3, 'desktops', 1, 'desktop computers.png', 'Desktops', 1);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (4, 'Laptops', 1, 'laptop computers.png', 'laptops', 1);
+VALUES (4, 'laptops', 1, 'laptop computers.png', 'Laptops', 1);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (5, 'Computer Components', 1, 'computer components.png', 'computer_components', 1);
+VALUES (5, 'Computer Components', 1, 'computer components.png', 'Computer Components', 1);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (6, 'Cameras', 1, 'digital cameras.png', 'Cameras', 2);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
