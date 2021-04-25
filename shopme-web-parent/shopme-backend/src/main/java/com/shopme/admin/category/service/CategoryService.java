@@ -1,10 +1,14 @@
 package com.shopme.admin.category.service;
 
+import com.shopme.admin.category.CategoryPageInfo;
 import com.shopme.admin.category.CategoryRepository;
 import com.shopme.admin.exception.CategoryNotFoundException;
 import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -21,14 +25,22 @@ import java.util.TreeSet;
 @Transactional
 public class CategoryService {
 
+    public static final int ROOT_CAT_PER_PAGE = 1;
+
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public List<Category> listAll(String sortDir) {
+    public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir) {
         Sort sort = Sort.by("name");
-
         sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-        return listHierarchicalCategories(categoryRepository.findRootCategories(sort), sortDir);
+
+        Pageable pageable = PageRequest.of(pageNum - 1, ROOT_CAT_PER_PAGE, sort);
+        Page<Category> pageCategories = categoryRepository.findRootCategories(pageable);
+        pageInfo.setTotalElements(pageCategories.getTotalElements());
+        pageInfo.setTotalPages(pageCategories.getTotalPages());
+
+        List<Category> rootCategories = pageCategories.getContent();
+        return listHierarchicalCategories(rootCategories, sortDir);
     }
 
     /**

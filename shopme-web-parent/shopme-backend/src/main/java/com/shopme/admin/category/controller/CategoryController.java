@@ -1,16 +1,18 @@
 package com.shopme.admin.category.controller;
 
+import com.shopme.admin.category.CategoryPageInfo;
 import com.shopme.admin.category.service.CategoryService;
 import com.shopme.admin.exception.CategoryNotFoundException;
-import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.admin.user.export.FileUploadUtil;
+import com.shopme.admin.user.service.UserService;
 import com.shopme.common.entity.Category;
+import com.shopme.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,16 +31,48 @@ public class CategoryController {
 
     @GetMapping("categories")
     public String listAll(@Param("sortDir") String sortDir, Model model) {
+        return listByPage(1, model, sortDir);
+    }
 
+    @GetMapping("categories/page/{pageNum}")
+    public String listByPage(@PathVariable(name = "pageNum") Integer pageNum, Model model,
+                             @Param("sortDir") String sortDir) {
         if (sortDir == null || sortDir.isEmpty()) {
             sortDir = "asc";
         }
-        List<Category> categories = categoryService.listAll(sortDir);
+
+        if(pageNum == null) {
+            pageNum = 1;
+        }
+
+        CategoryPageInfo categoryPageInfo = new CategoryPageInfo();
+        List<Category> categories = categoryService.listByPage(categoryPageInfo, pageNum, sortDir);
         String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
 
         model.addAttribute("listCategories", categories);
         model.addAttribute("reverseSortDir", reverseSortDir);
+
+        long startCount = (pageNum - 1) * CategoryService.ROOT_CAT_PER_PAGE + 1;
+        long endCount = startCount + CategoryService.ROOT_CAT_PER_PAGE - 1;
+        if (endCount > categoryPageInfo.getTotalElements()) {
+            endCount = categoryPageInfo.getTotalElements();
+        }
+        model.addAttribute("currentPage", pageNum);
+        model.addAttribute("totalPages", categoryPageInfo.getTotalPages());
+        model.addAttribute("totalItems", categoryPageInfo.getTotalElements());
+        model.addAttribute("startCount", startCount);
+        model.addAttribute("endCount", endCount);
+        model.addAttribute("sortField", "name");
+        model.addAttribute("sortDir", sortDir);
+
         return "categories/categories";
+
+        /*List<User> listUsers = page.getContent();
+        long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
+        long endCount = startCount + UserService.USERS_PER_PAGE - 1;
+        if (endCount > page.getTotalElements()) {
+            endCount = page.getTotalElements();
+        }*/
     }
 
     @GetMapping("/categories/new")

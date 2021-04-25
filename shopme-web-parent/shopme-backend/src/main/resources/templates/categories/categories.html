@@ -50,7 +50,7 @@
                         <th th:replace="fragments::column_link('name', 'Category Name', 'tag')"></th>
                     </th>-->
                     <th>
-                        <a class="text-white" th:href="@{'/categories?sortDir=' + ${reverseSortDir}}">Category Name</a>
+                        <a class="text-white" th:href="@{'/categories/page/' + ${pageNum} + '?sortDir=' + ${reverseSortDir}}">Category Name</a>
                         <span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
                     </th>
                     <th>Alias</th>
@@ -96,37 +96,8 @@
         </div>
     </div>
 
-    <!--    paging section-->
-    <div class="text-center m-1" th:if="${totalItems > 0}">
-        <span>Showing categories # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
-    </div>
-    <div class="text-center m-1" th:unless="${totalItems > 0}">
-        <span>No categories found</span>
-    </div>
-    <div th:if="${totalPages > 1}">
-        <nav>
-            <ul class="pagination justify-content-center flex-wrap">
-                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                    <a th:replace="fragments::page_link(1, First)"></a>
-                </li>
-                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-                    <a th:replace="fragments::page_link(${currentPage - 1}, Previous)"></a>
-                </li>
-
-                <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
-                    th:each="i : ${#numbers.sequence(1, totalPages)}">
-                    <a th:replace="fragments::page_link(${i}, ${i})"></a>
-                </li>
-
-                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                    <a th:replace="fragments::page_link(${currentPage + 1}, Next)"></a>
-                </li>
-                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-                    <a th:replace="fragments::page_link(${totalPages}, Last)"></a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <!--paging section-->
+    <div th:replace="fragments::pagination('/categories', 'categories')"></div>
 
     <div th:replace="modal_fragments::confirm_modal"></div>
     <div th:replace="fragments::footer"></div>

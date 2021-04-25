@@ -164,3 +164,4 @@ SECTION: CATEGORY MANAGEMENT
     - also delete the category image directory
     - move common code into common_list.js
     - move modal dialog into thymeleaf fragment
+76. Pagination for category
