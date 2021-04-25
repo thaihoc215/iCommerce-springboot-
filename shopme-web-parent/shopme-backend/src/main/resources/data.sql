@@ -98,7 +98,7 @@ VALUES (1,1),(2,1),(3,2),(9,2),(10,2),(11,2),(12,2),(13,2),(19,2),(20,2),(4,3),(
        (19,5),(20,5),(21,5),(22,5),(23,5);
 
 -- CATEGORY
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
+/*INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (1, 'Computers', 1, 'computers.png', 'Computers', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (2, 'electronics', 1, 'electronics.png', 'Electronics', null);
@@ -123,7 +123,14 @@ VALUES (12, 'books', 1, 'books.png', 'Books', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
 VALUES (13, 'hard_drive', 1, 'internal hard drive.png', 'Internal Hard Drive', null);
 INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (14, 'lenses', 1, 'lenses.png', 'Lenses', 6);
+VALUES (14, 'lenses', 1, 'lenses.png', 'Lenses', 6);*/
+
+INSERT INTO `categories` (id, name, alias, image,  enabled, parent_id)
+ VALUES (1,'Electronics','electronics','electronics.png',1,NULL),
+        (2,'Camera & Photo','camera','camera.jpg',1,1),
+        (3,'Computers','computers','computers.png',1,NULL),
+        (4,'Cell Phones & Accessories','cellphones','cellphones.png',1,1),
+        (5,'Desktops','desktop_computers','desktop computers.png',1,3),(6,'Laptops','laptop_computers','laptop computers.png',1,3),(7,'Tablets','tablet_computers','tablets.png',1,3),(8,'Computer Components','computer_components','computer components.png',1,3),(9,'Bags & Cases','camera_bags_cases','bags_cases.png',1,2),(10,'Digital Cameras','digital_cameras','digital cameras.png',1,2),(11,'Flashes','camera_flashes','flashes.png',1,2),(12,'Lenses','camera_lenses','lenses.png',1,2),(13,'Tripods & Monopods','camera_tripods_monopods','tripods_monopods.png',1,2),(14,'Carrier Cell Phones','carrier_cellphones','carrier cellphones.png',1,4),(15,'Unlocked Cell Phones','unlocked_cellphones','unlocked cellphones.png',1,4),(16,'Accessories','cellphone_accessories','cellphone accessories.png',1,4),(17,'Cables & Adapters','cellphone_cables_adapters','cables and adapters.png',1,16),(18,'MicroSD Cards','microsd_cards','microsd cards.png',1,16),(19,'Stands','cellphone_stands','cellphone_stands.png',1,16),(20,'Cases','cellphone_cases','cellphone cases.png',1,16),(21,'Headphones','headphones','headphones.png',1,16),(22,'CPU Processors Unit','computer_processors','computer processors.png',1,8),(23,'Graphic Cards','computer_graphic_cards','graphic cards.png',1,8),(24,'Internal Hard Drives','hard_drive','internal hard drive.png',1,8),(25,'Internal Optical Drives','computer_optical_drives','internal optical drives.png',1,8),(26,'Power Supplies','computer_power_supplies','power supplies.png',1,8),(27,'Solid State Drives','solid_state_drives','solid state drives.png',1,8),(28,'Sound Cards','computer_sound_cards','sound cards.png',1,8),(29,'Memory','computer_memory','computer memory.png',1,8),(30,'Motherboard','computer_motherboard','motherboards.png',1,8),(31,'Network Cards','computer_network_cards','network cards.png',1,8);
 
 
 
