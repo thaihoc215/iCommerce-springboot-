@@ -168,3 +168,4 @@ SECTION: CATEGORY MANAGEMENT
 77. Filter function
     - Search result do not show cat in hierarchical form
     - Work well with sorting and paging
+81. refactor code #4

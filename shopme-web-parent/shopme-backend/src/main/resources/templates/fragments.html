@@ -23,10 +23,10 @@
         <p>Shopme Control Panel - Copyright &copy; Shopme</p>
     </div>
 
-<!--    user column header fragment-->
-    <th th:fragment="column_link(fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
+    <!--user/cat column header fragment-->
+    <th th:fragment="column_link(moduleURL, fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
         <a class="text-white"
-           th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName} + '&sortDir=' +
+           th:href="@{${moduleURL} + '/page/' + ${currentPage} + '?sortField=' + ${fieldName} + '&sortDir=' +
                ${sortField != fieldName ? sortDir : reverseSortDir} +
                                    ${keyword != null ? '&keyword=' + keyword : ''}}">
             [[${columnLabel}]]
@@ -41,24 +41,26 @@
                            ${keyword != null ? '&keyword=' + keyword : ''}}">[[${label}]]
     </a>
 
-    <div th:fragment="category_status" th:remove="tag">
-        <a th:if="${category.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
-           th:href="@{'/categories/' + ${category.id} + '/enabled/false'}"
-           title="Disable this category"></a>
-        <a th:if="${category.enabled == false}" class="fas fa-circle fa-2x icon-dark"
-           th:href="@{'/categories/' + ${category.id} + '/enabled/true'}" title="Enable this category"></a>
+<!--    update status for user and cat-->
+    <div th:fragment="status(enabled, entityName, entityURL)" th:remove="tag">
+        <a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+           th:href="@{${entityURL} + '/enabled/false'}"
+           title="'Disable this ' + ${entityName}"></a>
+        <a th:if="${enabled == false}" class="fas fa-circle fa-2x icon-dark"
+           th:href="@{${entityURL} + '/enabled/true'}" title="'Enabled this ' + ${entityName}"></a>
     </div>
-
-    <div th:fragment="category_actions" th:remove="tag">
+    <div th:fragment="edit(entityName, editUrl)" th:remove="tag">
         <a href="#" class="fas fa-edit fa-2x icon-green"
-           th:href="@{'/categories/edit/' + ${category.id}}"
-           title="Edit this category"></a>
-        &nbsp;
-        <th:block th:if="${category.hasChildren == false}">
+           th:href="@{${editUrl}}"
+           title="'Edit this ' + ${entityName}"></a>
+    </div>
+<!--    th:href="@{'/categories/delete/' + ${category.id}}"-->
+    <div th:fragment="delete(entityName, entityId, deleteUrl, visible)" th:remove="tag">
+        <th:block th:if="${visible}">
             <a href="#" class="fas fa-trash fa-2x icon-dark link-delete"
-               th:href="@{'/categories/delete/' + ${category.id}}"
-               th:entityId="${category.id}"
-               title="Delete this category"></a>
+               th:href="@{${deleteUrl}}"
+               th:entityId="${entityId}"
+               title="'Delete this ' + ${entityName}"></a>
         </th:block>
     </div>
 
