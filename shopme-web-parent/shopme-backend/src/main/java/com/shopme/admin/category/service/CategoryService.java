@@ -3,7 +3,6 @@ package com.shopme.admin.category.service;
 import com.shopme.admin.category.CategoryPageInfo;
 import com.shopme.admin.category.CategoryRepository;
 import com.shopme.admin.exception.CategoryNotFoundException;
-import com.shopme.admin.exception.UserNotFoundException;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,22 +24,38 @@ import java.util.TreeSet;
 @Transactional
 public class CategoryService {
 
-    public static final int ROOT_CAT_PER_PAGE = 1;
+    public static final int ROOT_CAT_PER_PAGE = 4;
 
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CategoryRepository catRepo;
 
-    public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir) {
+    public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir, String keyword) {
         Sort sort = Sort.by("name");
         sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
 
         Pageable pageable = PageRequest.of(pageNum - 1, ROOT_CAT_PER_PAGE, sort);
-        Page<Category> pageCategories = categoryRepository.findRootCategories(pageable);
+
+        Page<Category> pageCategories;
+        if (keyword != null && !keyword.isEmpty()) {
+            pageCategories = catRepo.searchCategories(keyword, pageable);
+        } else {
+            pageCategories = catRepo.findRootCategories(pageable);
+        }
+
         pageInfo.setTotalElements(pageCategories.getTotalElements());
         pageInfo.setTotalPages(pageCategories.getTotalPages());
 
         List<Category> rootCategories = pageCategories.getContent();
-        return listHierarchicalCategories(rootCategories, sortDir);
+        if (keyword != null && !keyword.isEmpty()) {
+            //no need to show hierarchical in case use filter function
+            for (Category category : rootCategories) {
+                // to avoid can delete cat have children
+                category.setHasChildren(category.getChildren().size() > 0);
+            }
+            return rootCategories;
+        } else {
+            return listHierarchicalCategories(rootCategories, sortDir);
+        }
     }
 
     /**
@@ -83,7 +98,7 @@ public class CategoryService {
      */
     public List<Category> listCategoriesUsedInform() {
         List<Category> categoriesInform = new ArrayList<>();
-        Iterable<Category> categoriesInDb = categoryRepository.findRootCategories(Sort.by("name").ascending());
+        Iterable<Category> categoriesInDb = catRepo.findRootCategories(Sort.by("name").ascending());
         for (Category category : categoriesInDb) {
             if (category.getParent() == null) {
                 categoriesInform.add(new Category(category.getId(), category.getName()));
@@ -119,7 +134,7 @@ public class CategoryService {
      * @return cat after saved
      */
     public Category save(Category category) {
-        return categoryRepository.save(category);
+        return catRepo.save(category);
     }
 
     /**
@@ -131,7 +146,7 @@ public class CategoryService {
      */
     public Category getCategoryById(Integer id) throws CategoryNotFoundException {
         try {
-            return categoryRepository.findById(id).get();
+            return catRepo.findById(id).get();
         } catch (NoSuchElementException e) {
             throw new CategoryNotFoundException("Could not find any user with id: " + id);
         }
@@ -140,13 +155,13 @@ public class CategoryService {
     public String checkUnique(Integer id, String name, String alias) {
         boolean isCreatingNew = (id == null || id == 0);
 
-        Category category = categoryRepository.findByName(name);
+        Category category = catRepo.findByName(name);
 
         if (isCreatingNew) {
             if (category != null) {
                 return "DuplicateName";
             } else {
-                if (categoryRepository.findByAlias(alias) != null) {
+                if (catRepo.findByAlias(alias) != null) {
                     return "DuplicateAlias";
                 }
             }
@@ -155,7 +170,7 @@ public class CategoryService {
                 return "DuplicateName";
             }
 
-            Category categoryByAlias = categoryRepository.findByAlias(alias);
+            Category categoryByAlias = catRepo.findByAlias(alias);
             if (categoryByAlias != null && !categoryByAlias.getId().equals(id)) {
                 return "DuplicateAlias";
             }
@@ -190,7 +205,7 @@ public class CategoryService {
      * @param enable value of status
      */
     public void updateCategoryEnabledStatus(Integer id, boolean enable) {
-        categoryRepository.updateEnabledStatus(id, enable);
+        catRepo.updateEnabledStatus(id, enable);
     }
 
     /**
@@ -198,10 +213,10 @@ public class CategoryService {
      * @param id
      */
     public void deleteCategory(Integer id) throws CategoryNotFoundException {
-        Long countById = categoryRepository.countById(id);
+        Long countById = catRepo.countById(id);
         if (countById == null || countById == 0) {
             throw new CategoryNotFoundException("Could not find any category with id: " + id);
         }
-        categoryRepository.deleteById(id);
+        catRepo.deleteById(id);
     }
 }

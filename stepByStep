@@ -165,3 +165,6 @@ SECTION: CATEGORY MANAGEMENT
     - move common code into common_list.js
     - move modal dialog into thymeleaf fragment
 76. Pagination for category
+77. Filter function
+    - Search result do not show cat in hierarchical form
+    - Work well with sorting and paging

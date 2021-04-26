@@ -12,11 +12,25 @@ import java.util.List;
 
 public interface CategoryRepository extends PagingAndSortingRepository<Category, Integer> {
 
-    @Query("select c from Category  c where c.parent.id is NULL ")
+    /**
+     * find category with sort for use inform
+     * @param sort
+     * @return
+     */
+    @Query("select c from Category c where c.parent.id is NULL ")
     List<Category> findRootCategories(Sort sort);
 
-    @Query("select c from Category  c where c.parent.id is NULL ")
+    /**
+     * find category with paging
+     * @param pageable
+     * @return
+     */
+    @Query("select c from Category c where c.parent.id is NULL ")
     Page<Category> findRootCategories(Pageable pageable);
+
+    @Query("select c from Category c where lower(c.name)" +
+            " like lower(concat('%', ?1,'%'))")
+    Page<Category> searchCategories(String keyword, Pageable pageable);
 
     Category findByName(String name);
 
