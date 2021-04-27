@@ -98,33 +98,6 @@ VALUES (1,1),(2,1),(3,2),(9,2),(10,2),(11,2),(12,2),(13,2),(19,2),(20,2),(4,3),(
        (19,5),(20,5),(21,5),(22,5),(23,5);
 
 -- CATEGORY
-/*INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (1, 'Computers', 1, 'computers.png', 'Computers', null);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (2, 'electronics', 1, 'electronics.png', 'Electronics', null);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (3, 'desktops', 1, 'desktop computers.png', 'Desktops', 1);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (4, 'laptops', 1, 'laptop computers.png', 'Laptops', 1);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (5, 'Computer Components', 1, 'computer components.png', 'Computer Components', 1);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (6, 'Cameras', 1, 'digital cameras.png', 'Cameras', 2);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (7, 'Smartphones', 0, 'unlocked cellphones.png', 'Smartphones', 2);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (8, 'Memory', 1, 'computer memory.png', 'Memory', 5);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (9, 'Gaming Laptops', 0, 'laptop computers.png', 'Gaming Laptops', 4);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (10, 'Iphone', 1, 'carrier cellphones.png', 'Iphone', 7);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (12, 'books', 1, 'books.png', 'Books', null);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (13, 'hard_drive', 1, 'internal hard drive.png', 'Internal Hard Drive', null);
-INSERT INTO `categories` (id, alias, enabled, image, name, parent_id)
-VALUES (14, 'lenses', 1, 'lenses.png', 'Lenses', 6);*/
-
 INSERT INTO `categories` (id, name, alias, image,  enabled, parent_id)
  VALUES (1,'Electronics','electronics','electronics.png',1,NULL),
         (2,'Camera & Photo','camera','camera.jpg',1,1),
@@ -158,5 +131,11 @@ INSERT INTO `categories` (id, name, alias, image,  enabled, parent_id)
         (30,'Motherboard','computer_motherboard','motherboards.png',1,8),
         (31,'Network Cards','computer_network_cards','network cards.png',1,8);
 
-
-
+---Brands
+INSERT INTO `brands` (id, name, logo)
+VALUES (1,'Electronics', 'electronics.png'),
+       (2,'Camera & Photo','camera.jpg'),
+       (3,'Computers','computers.png'),
+       (4,'Cell Phones & Accessories','cellphones.png');
+INSERT INTO `barnds_categories` (brand_id, category_id)
+VALUES (1,1),(2,1),(3,2);

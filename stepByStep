@@ -169,3 +169,9 @@ SECTION: CATEGORY MANAGEMENT
     - Search result do not show cat in hierarchical form
     - Work well with sorting and paging
 81. refactor code #4
+=======================
+83. Add Brand entity and brand repository
+84. BrandRepo test
+85. Listing Brand
+    - Config Spring security -> only admin and editors can manage brands
+    - Create BrandService/BrandController/brandHtmlGui
