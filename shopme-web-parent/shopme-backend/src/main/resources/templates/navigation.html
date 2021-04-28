@@ -26,9 +26,12 @@
                         </li>
                     </th:block>
 
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/brands}">Brands</a>
-                    </li>
+                    <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/brands}">Brands</a>
+                        </li>
+                    </th:block>
+
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/products}">Products</a>
                     </li>
