@@ -175,3 +175,6 @@ SECTION: CATEGORY MANAGEMENT
 85. Listing Brand
     - Config Spring security -> only admin and editors can manage brands
     - Create BrandService/BrandController/brandHtmlGui
+88. Brand form
+    - user multiple attribute for select tag for select multiple categories
+    - create brand form -> controller method to show brand form -> show list categories in brand form

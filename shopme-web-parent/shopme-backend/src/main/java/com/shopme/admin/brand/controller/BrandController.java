@@ -3,6 +3,7 @@ package com.shopme.admin.brand.controller;
 import com.shopme.admin.brand.service.BrandService;
 import com.shopme.admin.category.service.CategoryService;
 import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -18,6 +19,9 @@ public class BrandController {
 
     @Autowired
     private BrandService brandService;
+
+    @Autowired
+    private CategoryService categoryService;
 
     @GetMapping("/brands")
     public String listAll(Model model) {
@@ -66,19 +70,19 @@ public class BrandController {
         }*/
     }
 
-    /*@GetMapping("/categories/new")
+    @GetMapping("/brands/new")
     public String newCategory(Model model) {
         List<Category> listCategories = categoryService.listCategoriesUsedInform();
-        Category category = new Category();
-        category.setEnabled(true);
-
-        model.addAttribute("category", category);
         model.addAttribute("listCategories", listCategories);
-        model.addAttribute("pageTitle", "Create New Category");
 
-        return "categories/category_form";
+        Brand brand = new Brand();
+        model.addAttribute("brand", brand);
+        model.addAttribute("pageTitle", "Create New Brands");
+
+        return "brands/brand_form";
     }
 
+    /*
     @PostMapping("/categories/save")
     public String saveCategory(Category category, RedirectAttributes redirectAttributes,
                                @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
