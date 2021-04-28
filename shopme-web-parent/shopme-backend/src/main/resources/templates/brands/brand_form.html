@@ -101,6 +101,28 @@
         }
 
     }
+
+    $(document).ready(function () {
+        let dropdownCategories = $("#categories");
+        let divChosenCategories = $("#chosenCategories");
+
+        dropdownCategories.change(function () {
+            divChosenCategories.empty();
+            showChosenCategories();
+        });
+
+        function showChosenCategories() {
+            dropdownCategories.children("option:selected").each(function () {
+                let selectedCat = $(this);
+                let catId = selectedCat.val();
+                // let catName = selectedCat.text().replace(/-/g, "");
+                let catName = selectedCat.text().replaceAll("-", "");
+
+                // alert(catId + '...' + catName);
+                divChosenCategories.append("<span class='badge badge-secondary m-1'>" + catName + "</span>")
+            });
+        }
+    })
 </script>
 <script th:src="@{/js/common_form.js}">
 </script>
