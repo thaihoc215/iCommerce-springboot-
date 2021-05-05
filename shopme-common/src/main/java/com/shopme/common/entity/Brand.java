@@ -30,7 +30,7 @@ public class Brand {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "barnds_categories",
+            name = "brands_categories",
             joinColumns = @JoinColumn(name = "brand_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )

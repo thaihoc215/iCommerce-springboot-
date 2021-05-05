@@ -36,10 +36,6 @@ public class BrandService {
         return brandRepo.findAll(pageable);
     }
 
-    /*public List<Role> listRoles() {
-        return (List<Role>) roleRepository.findAll();
-    }*/
-
     /**
      * Update/Save user
      * @param user user information
