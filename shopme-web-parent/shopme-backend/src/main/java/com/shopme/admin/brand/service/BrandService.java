@@ -37,24 +37,13 @@ public class BrandService {
     }
 
     /**
-     * Update/Save user
-     * @param user user information
-     * @return user saved
+     * Update/ Add brand
+     * @param brand
+     * @return
      */
-    /*public User save(User user) {
-        boolean isUpdatingUser = user.getId() != null;
-        if (isUpdatingUser) {
-            User existingUser = userRepository.findById(user.getId()).get();
-            if(user.getPassword().isEmpty()) { // not set new password then use exist password
-                user.setPassword(existingUser.getPassword());
-            } else {
-                encodePassword(user);
-            }
-        } else {
-            encodePassword(user);
-        }
-        return userRepository.save(user);
-    }*/
+    public Brand save(Brand brand) {
+        return brandRepo.save(brand);
+    }
 
 
     /*public boolean isEmailUnique(Integer id, String email) {

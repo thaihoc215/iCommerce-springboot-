@@ -26,7 +26,7 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/category-images/**") // map the absolute path
                 .addResourceLocations("file:///" + catImagesPath + "/");
 
-        String brandDirName = "../brands-logos";
+        String brandDirName = "../brand-logos";
         Path brandLogoName = Paths.get(brandDirName);
         String brandLogoPath = brandLogoName.toFile().getAbsolutePath();
         registry.addResourceHandler("/brand-logos/**") // map the absolute path
