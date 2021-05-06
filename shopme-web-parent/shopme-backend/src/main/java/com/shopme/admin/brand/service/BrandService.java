@@ -1,6 +1,7 @@
 package com.shopme.admin.brand.service;
 
 import com.shopme.admin.brand.BrandRepository;
+import com.shopme.admin.exception.BrandNotFoundException;
 import com.shopme.common.entity.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @Transactional
@@ -45,39 +47,37 @@ public class BrandService {
         return brandRepo.save(brand);
     }
 
-
-    /*public boolean isEmailUnique(Integer id, String email) {
-        User userByEmail = userRepository.getUserByEmail(email);
-
-        if (userByEmail == null) {
-            return true;
-        }
-
-        if (id == null) {
-            return false;
-        } else {
-            return userByEmail.getId().equals(id);
-        }
-    }
-
-    public User getUserById(Integer id) throws UserNotFoundException {
+    public Brand getBrandById(Integer id) throws BrandNotFoundException {
         try {
-            return userRepository.findById(id).get();
+            return brandRepo.findById(id).get();
         } catch (NoSuchElementException e) {
-            throw new UserNotFoundException("Could not find any user with id: " + id);
+            throw new BrandNotFoundException("Could not find any user with id: " + id);
         }
     }
 
-    public void deleteUser(Integer id) throws UserNotFoundException {
-        Long countById = userRepository.countById(id);
+
+    public String checkUnique(Integer id, String name) {
+        boolean isCreatingNew = (id == null || id == 0);
+
+        Brand brand = brandRepo.findByName(name);
+
+        if (isCreatingNew) {
+            if (brand != null) {
+                return "DuplicateName";
+            }
+        } else {
+            if (brand != null && !brand.getId().equals(id)) {
+                return "DuplicateName";
+            }
+        }
+        return "OK";
+    }
+
+    public void deleteBrand(Integer id) throws BrandNotFoundException {
+        Long countById = brandRepo.countById(id);
         if (countById == null || countById == 0) {
-            throw new UserNotFoundException("Could not find any user with id: " + id);
+            throw new BrandNotFoundException("Could not find any category with id: " + id);
         }
-
-        userRepository.deleteById(id);
+        brandRepo.deleteById(id);
     }
-
-    public void updateUserEnabledStatus(Integer id, boolean enable) {
-        userRepository.updateEnabledStatus(id, enable);
-    }*/
 }

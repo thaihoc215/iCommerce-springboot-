@@ -2,6 +2,7 @@ package com.shopme.admin.brand.controller;
 
 import com.shopme.admin.brand.service.BrandService;
 import com.shopme.admin.category.service.CategoryService;
+import com.shopme.admin.exception.BrandNotFoundException;
 import com.shopme.admin.user.export.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
@@ -89,7 +90,7 @@ public class BrandController {
     }
 
 
-    @PostMapping("/categories/save")
+    @PostMapping("/brands/save")
     public String saveBrand(Brand brand, RedirectAttributes redirectAttributes,
                                @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
         if (!multipartFile.isEmpty()) {
@@ -97,7 +98,7 @@ public class BrandController {
             brand.setLogo(fileNameSelected);
             Integer brandId = brandService.save(brand).getId();
 
-            String uploadDir = "../brand-photos/" + brandId; //to go to shopme parent
+            String uploadDir = "../brand-logos/" + brandId; //to go to shopme parent
             FileUploadUtil.cleanDirectory(uploadDir);
             FileUploadUtil.saveFile(uploadDir, fileNameSelected, multipartFile);
         } else {
@@ -108,48 +109,37 @@ public class BrandController {
                 "successfully");
         return "redirect:/brands";
     }
-/*
-    @GetMapping("/categories/edit/{id}")
+
+    @GetMapping("/brands/edit/{id}")
     public String editCategory(@PathVariable("id") Integer id, Model model,
                            RedirectAttributes redirectAttributes) {
         try {
-            Category catById = categoryService.getCategoryById(id);
-            model.addAttribute("category", catById);
-            model.addAttribute("pageTitle", "Edit Category Id: " + id);
+            Brand brandById = brandService.getBrandById(id);
+            model.addAttribute("brand", brandById);
+            model.addAttribute("pageTitle", "Edit Brand Id: " + id);
 
             List<Category> listCategories = categoryService.listCategoriesUsedInform();
             model.addAttribute("listCategories", listCategories);
 
-            return "categories/category_form";
-        } catch (CategoryNotFoundException e) {
+            return "brands/brand_form";
+        } catch (BrandNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
-            return "redirect:/categories";
+            return "redirect:/brands";
         }
     }
 
-
-    @GetMapping("/categories/{id}/enabled/{status}")
-    public String updateCatStatus(@PathVariable("id") Integer id, @PathVariable("status") boolean status,
-                                   RedirectAttributes redirectAttributes) {
-        categoryService.updateCategoryEnabledStatus(id, status);
-        String statusMes = status ? "enabled" : "disabled";
-        String message = "Category id: " + id + " has been " + statusMes;
-        redirectAttributes.addFlashAttribute("message", message);
-        return "redirect:/categories";
-    }
-
-    @GetMapping("/categories/delete/{id}")
+    @GetMapping("/brands/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
         try {
-            categoryService.deleteCategory(id);
-            String uploadDir = "../category-images/" + id; //to go to shopme parent
+            brandService.deleteBrand(id);
+            String uploadDir = "../brand-logos/" + id; //to go to shopme parent
             FileUploadUtil.removeDir(uploadDir);
 
             redirectAttributes.addFlashAttribute("message", "The user ID: " + id +
                     " has been deleted successfully");
-        } catch (CategoryNotFoundException e) {
+        } catch (BrandNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
         }
-        return "redirect:/categories";
-    }*/
+        return "redirect:/brands";
+    }
 }

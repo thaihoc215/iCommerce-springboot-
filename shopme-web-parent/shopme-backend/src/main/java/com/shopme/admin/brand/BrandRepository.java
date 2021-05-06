@@ -28,7 +28,7 @@ public interface BrandRepository extends PagingAndSortingRepository<Brand, Integ
             " like lower(concat('%', ?1,'%'))")
     Page<Category> searchCategories(String keyword, Pageable pageable);
 
-    Category findByName(String name);
+
 
     Category findByAlias(String alias);
 
@@ -36,6 +36,8 @@ public interface BrandRepository extends PagingAndSortingRepository<Brand, Integ
     @Query("Update Category c set c.enabled = :enabled where c.id = :id")
     @Modifying
     void updateEnabledStatus(Integer id, boolean enabled);*/
+
+    Brand findByName(String name);
 
     Long countById(Integer id);
 }

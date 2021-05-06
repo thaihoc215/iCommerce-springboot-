@@ -71,20 +71,16 @@
     let moduleURL = "[[@{/brands}]]";
     function checkUnique(form) {
         let url = "[[@{/rest/brands/check_unique}]]";
-        let catId = $("#id").val();
-        let catName = $("#name").val();
-        let catAlias = $("#alias").val();
+        let brandId = $("#id").val();
+        let brandName = $("#name").val();
         let csrfValue = $("input[name='_csrf']").val(); //security check
-        let params = {id: catId, name: catName, alias: catAlias, _csrf: csrfValue};
+        let params = {id: brandId, name: brandName, _csrf: csrfValue};
 
         $.post(url, params, function (response) {
             if (response === "OK") {
                 form.submit();
             } else if (response === "DuplicateName") {
-                showModalDialog("Warning", "There is another category having the name " + catName);
-                // alert("There is another user having the email " + userEmail);
-            } else if (response === "DuplicateAlias") {
-                showModalDialog("Warning", "There is another category having the name " + catAlias);
+                showModalDialog("Warning", "There is another category having the name " + brandName);
             } else {
                 showModalDialog("Error", "Unknown response from server");
             }
@@ -102,6 +98,7 @@
 
     }
 
+    // for chosing multiple category for brand
     $(document).ready(function () {
         let dropdownCategories = $("#categories");
         let divChosenCategories = $("#chosenCategories");
