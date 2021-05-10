@@ -111,8 +111,8 @@ public class BrandController {
     }
 
     @GetMapping("/brands/edit/{id}")
-    public String editCategory(@PathVariable("id") Integer id, Model model,
-                           RedirectAttributes redirectAttributes) {
+    public String editBrand(@PathVariable("id") Integer id, Model model,
+                            RedirectAttributes redirectAttributes) {
         try {
             Brand brandById = brandService.getBrandById(id);
             model.addAttribute("brand", brandById);
@@ -129,7 +129,7 @@ public class BrandController {
     }
 
     @GetMapping("/brands/delete/{id}")
-    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
+    public String deleteBrand(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
         try {
             brandService.deleteBrand(id);
             String uploadDir = "../brand-logos/" + id; //to go to shopme parent

@@ -179,3 +179,4 @@ SECTION: CATEGORY MANAGEMENT
     - user multiple attribute for select tag for select multiple categories
     - create brand form -> controller method to show brand form -> show list categories in brand form
 89. show categories selected in form
+89 90. Add create/update/delete/check unique brand function
