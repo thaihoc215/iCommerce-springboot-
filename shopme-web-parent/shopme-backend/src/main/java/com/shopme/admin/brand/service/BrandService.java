@@ -18,15 +18,10 @@ import java.util.NoSuchElementException;
 @Transactional
 public class BrandService {
 
-    public static final int BRAND_PER_PAGE = 4;
+    public static final int BRAND_PER_PAGE = 15;
 
     @Autowired
     private BrandRepository brandRepo;
-
-    public List<Brand> listAllBrands() {
-        return (List<Brand>) brandRepo.findAll();
-//        return (List<User>) userRepository.findAll(Sort.by("firstName").ascending());
-    }
 
     public Page<Brand> listByPage(int pageNumber, String sortField, String sortDir, String keyword) {
         Sort sort = Sort.by(sortField);

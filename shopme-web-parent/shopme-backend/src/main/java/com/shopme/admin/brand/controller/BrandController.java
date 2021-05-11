@@ -7,6 +7,7 @@ import com.shopme.admin.user.export.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,41 +41,37 @@ public class BrandController {
                              @Param("sortField") String sortField, @Param("sortDir") String sortDir,
                              @Param("keyword") String keyword) {
 
-        model.addAttribute("listBrands", brandService.listAllBrands());
+        if (sortDir == null || sortDir.isEmpty()) {
+            sortDir = "asc";
+        }
 
-        /*Page<Brand> brandPage = brandService.listByPage(pageNum, sortField, sortDir, keyword);
+        if(pageNum == null) {
+            pageNum = 1;
+        }
+
+
+        Page<Brand> brandPage = brandService.listByPage(pageNum, sortField, sortDir, keyword);
         List<Brand> brands = brandPage.getContent();
+        model.addAttribute("listBrands", brands);
 
         String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-        model.addAttribute("listBrands", brands);
-        model.addAttribute("reverseSortDir", reverseSortDir);*/
+        model.addAttribute("reverseSortDir", reverseSortDir);
 
-
-
-        /*long startCount = (pageNum - 1) * BrandService.BRAND_PER_PAGE + 1;
-        long endCount = startCount + CategoryService.BRAND_PER_PAGE - 1;
-        if (endCount > categoryPageInfo.getTotalElements()) {
-            endCount = categoryPageInfo.getTotalElements();
+        long startCount = (pageNum - 1) * BrandService.BRAND_PER_PAGE + 1;
+        long endCount = startCount + BrandService.BRAND_PER_PAGE - 1;
+        if (endCount > brandPage.getTotalElements()) {
+            endCount = brandPage.getTotalElements();
         }
         model.addAttribute("currentPage", pageNum);
-        model.addAttribute("totalPages", categoryPageInfo.getTotalPages());
-        model.addAttribute("totalItems", categoryPageInfo.getTotalElements());
+        model.addAttribute("totalPages", brandPage.getTotalPages());
+        model.addAttribute("totalItems", brandPage.getTotalElements());
         model.addAttribute("startCount", startCount);
         model.addAttribute("endCount", endCount);
         model.addAttribute("sortField", "name");
         model.addAttribute("sortDir", sortDir);
-        model.addAttribute("keyword", keyword);*/
-
-
+        model.addAttribute("keyword", keyword);
 
         return "brands/brands";
-
-        /*List<User> listUsers = page.getContent();
-        long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
-        long endCount = startCount + UserService.USERS_PER_PAGE - 1;
-        if (endCount > page.getTotalElements()) {
-            endCount = page.getTotalElements();
-        }*/
     }
 
     @GetMapping("/brands/new")
