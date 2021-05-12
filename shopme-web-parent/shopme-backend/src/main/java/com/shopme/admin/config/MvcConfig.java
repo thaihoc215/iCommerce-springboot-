@@ -14,24 +14,17 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // to expose directory on the file system to accessible by client
-        String userDirName = "user-photos";
-        Path userPhotoDir = Paths.get(userDirName);
-        String userPhotosPath = userPhotoDir.toFile().getAbsolutePath();
-        registry.addResourceHandler("/" + userDirName + "/**") // map the absolute path
-                .addResourceLocations("file:///" + userPhotosPath + "/");
+        exposeDirectory("user-photos", registry);
+        exposeDirectory("../category-images", registry);
+        exposeDirectory("../brand-logos", registry);
+    }
 
-        String catDirName = "../category-images";
-        Path catImageName = Paths.get(catDirName);
-        String catImagesPath = catImageName.toFile().getAbsolutePath();
-        registry.addResourceHandler("/category-images/**") // map the absolute path
-                .addResourceLocations("file:///" + catImagesPath + "/");
+    private void exposeDirectory(String pathPattern, ResourceHandlerRegistry registry) {
+        Path path = Paths.get(pathPattern);
+        String absolutePath = path.toFile().getAbsolutePath();
+        String logicalPath = pathPattern.replace("../", "") + "/**";
 
-        String brandDirName = "../brand-logos";
-        Path brandLogoName = Paths.get(brandDirName);
-        String brandLogoPath = brandLogoName.toFile().getAbsolutePath();
-        registry.addResourceHandler("/brand-logos/**") // map the absolute path
-                .addResourceLocations("file:///" + brandLogoPath + "/");
-
-
+        registry.addResourceHandler(logicalPath) // map the absolute path
+                .addResourceLocations("file:///" + absolutePath + "/");
     }
 }

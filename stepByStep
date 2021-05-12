@@ -184,3 +184,5 @@ SECTION: CATEGORY MANAGEMENT
     - sort x
     - paging
     - filter
+95. refactor code
+    - Mvc config class
